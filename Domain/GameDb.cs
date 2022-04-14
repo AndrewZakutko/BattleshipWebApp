@@ -10,6 +10,6 @@ namespace Domain
         public string? NameOfWinner { get; set; }
         public string GameStatus { get; set; }
         public int MoveCount { get; set; }
-        public string ResultInfo { get; set; }
+        public string? ResultInfo { get; set; }
     }
 }

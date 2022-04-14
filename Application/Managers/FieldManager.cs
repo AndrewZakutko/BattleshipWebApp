@@ -6,6 +6,7 @@ namespace Application.Managers
     public class FieldManager
     {
         public Cell[,] Cells { get; set; }
+        public List<Cell> ListCells { get; set; }
         
         public FieldManager()
         {
@@ -21,6 +22,12 @@ namespace Application.Managers
                         Y = y,
                         Status = CellStatus.None
                     };
+                    ListCells.Add(new Cell
+                    {
+                        X = x,
+                        Y = y,
+                        Status = CellStatus.None
+                    });
                 }
             }
         }
@@ -36,6 +43,7 @@ namespace Application.Managers
                         Y = y,
                         Status = CellStatus.None
                     };
+                    ListCells.Clear();
                 }
             }
         }

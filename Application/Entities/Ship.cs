@@ -6,7 +6,7 @@ namespace Application.Models
     {
         public byte StartPositionX { get; set; }
         public byte StartPositionY { get; set; }
-        public ShipDirection Direction { get; set; }
-        public ShipRank Rank { get; set; }
+        public string Direction { get; set; }
+        public string Rank { get; set; }
     }
 }

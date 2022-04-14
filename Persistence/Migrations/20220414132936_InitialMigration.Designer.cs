@@ -11,13 +11,13 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220411132539_InitialMigration")]
+    [Migration("20220414132936_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "6.0.3");
+            modelBuilder.HasAnnotation("ProductVersion", "6.0.4");
 
             modelBuilder.Entity("Domain.CellDb", b =>
                 {
@@ -100,7 +100,6 @@ namespace Persistence.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ResultInfo")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid?>("SecondPlayerFieldId")
@@ -132,10 +131,10 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<byte>("startPositionX")
+                    b.Property<byte>("StartPositionX")
                         .HasColumnType("INTEGER");
 
-                    b.Property<byte>("startPositionY")
+                    b.Property<byte>("StartPositionY")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");

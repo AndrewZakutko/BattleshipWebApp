@@ -53,8 +53,8 @@ namespace Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    startPositionX = table.Column<byte>(type: "INTEGER", nullable: false),
-                    startPositionY = table.Column<byte>(type: "INTEGER", nullable: false),
+                    StartPositionX = table.Column<byte>(type: "INTEGER", nullable: false),
+                    StartPositionY = table.Column<byte>(type: "INTEGER", nullable: false),
                     ShipDirection = table.Column<string>(type: "TEXT", nullable: false),
                     ShipRank = table.Column<string>(type: "TEXT", nullable: false)
                 },
@@ -96,7 +96,7 @@ namespace Persistence.Migrations
                     NameOfWinner = table.Column<string>(type: "TEXT", nullable: true),
                     GameStatus = table.Column<string>(type: "TEXT", nullable: false),
                     MoveCount = table.Column<int>(type: "INTEGER", nullable: false),
-                    ResultInfo = table.Column<string>(type: "TEXT", nullable: false)
+                    ResultInfo = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

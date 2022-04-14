@@ -9,7 +9,7 @@ namespace Application.Models
         public Player SecondPlayer { get; set; }
         public Field SecondPlayerField { get; set; }
         public Player Winner { get; set; }
-        public GameStatus Status { get; set; }
+        public string Status { get; set; }
         public int MoveCount { get; set; }
         public string ResultInfo { get; set; }
     }
