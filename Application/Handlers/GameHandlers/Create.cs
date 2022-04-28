@@ -24,9 +24,9 @@ namespace Application.Handlers.GameHandlers
 
             public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
-                var player = await _context.Players.AnyAsync(p => p.Name == request.Player.Name);
+                var player = await _context.Players.Where(p => p.Name == request.Player.Name).FirstAsync();
 
-                if (player == false) return Result<Unit>.Failure("Player not found");
+                if (player == null) return null;
 
                 var field = new FieldDb();
                 
@@ -34,7 +34,7 @@ namespace Application.Handlers.GameHandlers
                 
                 var game = new GameDb
                 {
-                    FirstPlayerFieldId = field.Id.ToString(),
+                    FirstPlayerField = field,
                     FirstPlayerName = request.Player.Name,
                     GameStatus = GameStatus.NotReady.ToString(),
                     MoveCount = default(int),
@@ -42,6 +42,8 @@ namespace Application.Handlers.GameHandlers
 
                 await _context.Games.AddAsync(game);
                 
+                player.Game = game;
+
                 var result = await _context.SaveChangesAsync() > 0;
 
                 if(!result) return Result<Unit>.Failure("Failure to create game");

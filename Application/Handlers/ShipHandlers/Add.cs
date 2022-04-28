@@ -1,9 +1,9 @@
 using Application.Core;
 using Application.Entities;
 using Application.Enums;
-using Application.Models;
 using Domain;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Persistence;
 
 namespace Application.Handlers.ShipHandlers
@@ -12,7 +12,7 @@ namespace Application.Handlers.ShipHandlers
     {
         public class Command : IRequest<Result<Unit>>
         {
-            public AddShip Ship { get; set; }
+            public AddShip AddShip { get; set; }
         }
 
         public class Handler : IRequestHandler<Command, Result<Unit>>
@@ -25,23 +25,23 @@ namespace Application.Handlers.ShipHandlers
 
             public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
-
                 var ship = new ShipDb() {
-                    StartPositionX = request.Ship.StartPositionX,
-                    StartPositionY = request.Ship.StartPositionY,
-                    ShipDirection = request.Ship.Direction,
-                    ShipRank = request.Ship.Rank
+                    Id = new Guid(),
+                    StartPositionX = request.AddShip.StartPositionX,
+                    StartPositionY = request.AddShip.StartPositionY,
+                    ShipDirection = request.AddShip.Direction,
+                    ShipRank = request.AddShip.Rank
                 };
 
                 await _context.Ships.AddAsync(ship);
-                await _context.SaveChangesAsync();
                 
-                var field = await _context.Fields.FindAsync(request.Ship.FieldId);
-                var cells = new List<CellDb>();
+                var field = await _context.Fields.FindAsync(request.AddShip.FieldId);
+
+                if(field == null) return null;
 
                 var n = default(int);
 
-                switch(request.Ship.Rank)
+                switch(request.AddShip.Rank)
                 {
                     case "One":
                         n = 1;
@@ -57,38 +57,40 @@ namespace Application.Handlers.ShipHandlers
                         break;
                 }
 
-                if(request.Ship.Direction == "Horizontal")
+                if(request.AddShip.Direction == "Horizontal")
                 {
                     for(int i = 0; i < n; i++) {
-                        var newShip = new CellDb() {
-                            ShipDbId = ship.Id.ToString(),
-                            X = request.Ship.StartPositionX + n,
-                            Y = request.Ship.StartPositionY,
+                        var newShipCell = new CellDb() {
+                            Id = new Guid(),
+                            X = request.AddShip.StartPositionX + i,
+                            Y = request.AddShip.StartPositionY,
                             CellStatus = CellStatus.Busy.ToString(),
                         };
-                        cells.Add(newShip);
-                        field.CellShips.Add(new CellShipDb() {
-                            CellDbId = newShip.Id.ToString(),
+                        await _context.Cells.AddAsync(newShipCell);
+                        await _context.CellShips.AddAsync(new CellShipDb() {
+                            Cell = newShipCell,
+                            Ship = ship,
+                            Field = field
                         });
                     }
                 }
                 else
                 {
                    for(int i = 0; i < n; i++) {
-                        var newShip = new CellDb() {
-                            ShipDbId = ship.Id.ToString(),
-                            X = request.Ship.StartPositionX,
-                            Y = request.Ship.StartPositionY + n,
+                        var newShipCell = new CellDb() {
+                            Id = new Guid(),
+                            X = request.AddShip.StartPositionX,
+                            Y = request.AddShip.StartPositionY + i,
                             CellStatus = CellStatus.Busy.ToString(),
                         };
-                        cells.Add(newShip);
-                        field.CellShips.Add(new CellShipDb() {
-                            CellDbId = newShip.Id.ToString(),
+                        await _context.Cells.AddAsync(newShipCell);
+                        await _context.CellShips.AddAsync(new CellShipDb() {
+                            Cell = newShipCell,
+                            Ship = ship,
+                            Field = field
                         });
                     } 
                 }
-
-                await _context.Cells.AddRangeAsync(cells);
                 var result = await _context.SaveChangesAsync() > 0;
 
                 if(result) return Result<Unit>.Success(Unit.Value);

@@ -1,5 +1,5 @@
+using Application.Entities;
 using Application.Enums;
-using Application.Models;
 
 namespace Application.Managers
 {
@@ -21,8 +21,8 @@ namespace Application.Managers
             {
                 StartPositionX = startPositionX,
                 StartPositionY = startPositionY,
-                Direction = shipDirection,
-                Rank = shipRank
+                ShipDirection = shipDirection,
+                ShipRank = shipRank
             };
             
             if(CanArrageShip(startPositionX, startPositionY, shipRank, shipDirection))
@@ -48,16 +48,16 @@ namespace Application.Managers
                 {
                     for(byte i = 0; i < length; i++)
                     {
-                        _fieldManager.Cells[startPositionX + i, startPositionY].Status = CellStatus.Busy;
-                        shipCells.Add(new Cell{X = (byte)(startPositionX + i), Y = startPositionY, Status = CellStatus.Busy});
+                        _fieldManager.Cells[startPositionX + i, startPositionY].CellStatus = CellStatus.Busy.ToString();
+                        shipCells.Add(new Cell{X = (byte)(startPositionX + i), Y = startPositionY, CellStatus = CellStatus.Busy.ToString()});
                     }
                 }
                 else
                 {
                     for(byte i = 0; i < length; i++)
                     {
-                        _fieldManager.Cells[startPositionX, startPositionY + i].Status = CellStatus.Busy;
-                        shipCells.Add(new Cell{X = startPositionX, Y = (byte)(startPositionY + i), Status = CellStatus.Busy});
+                        _fieldManager.Cells[startPositionX, startPositionY + i].CellStatus = CellStatus.Busy.ToString();
+                        shipCells.Add(new Cell{X = startPositionX, Y = (byte)(startPositionY + i), CellStatus = CellStatus.Busy.ToString()});
                     }
                 }
                 SetForbiddenCellsAroundShip(shipCells);
@@ -67,14 +67,14 @@ namespace Application.Managers
         }
         public bool IsShoot(byte x, byte y)
         {
-            if(_fieldManager.Cells[x,y].Status == CellStatus.Busy)
+            if(_fieldManager.Cells[x,y].CellStatus == CellStatus.Busy.ToString())
             {
-                _fieldManager.Cells[x,y].Status = CellStatus.Destroyed;
+                _fieldManager.Cells[x,y].CellStatus = CellStatus.Destroyed.ToString();
                 return true;
             }
             else
             {
-                _fieldManager.Cells[x, y].Status = CellStatus.ShootWithoutHit;
+                _fieldManager.Cells[x, y].CellStatus = CellStatus.ShootWithoutHit.ToString();
                  return false;
             }
         }
@@ -85,7 +85,7 @@ namespace Application.Managers
             
             var startCell = _fieldManager.Cells[startPositionX, startPositionY];
 
-            if(startCell.Status == CellStatus.Busy || startCell.Status == CellStatus.Forbidden)
+            if(startCell.CellStatus == CellStatus.Busy.ToString() || startCell.CellStatus == CellStatus.Forbidden.ToString())
                 return false;
             
             if(shipDirection == ShipDirection.Horizontal.ToString())
@@ -118,7 +118,7 @@ namespace Application.Managers
                 if((startPoint.X + i) < GameRules.FIELD_SIZE)
                 {
                     var checkPoint = _fieldManager.Cells[startPoint.X + i, startPoint.Y];
-                    if(checkPoint.Status == CellStatus.Busy || checkPoint.Status == CellStatus.Forbidden)
+                    if(checkPoint.CellStatus == CellStatus.Busy.ToString() || checkPoint.CellStatus == CellStatus.Forbidden.ToString())
                     {
                         return false;
                     }
@@ -153,7 +153,7 @@ namespace Application.Managers
                 if((startPoint.Y + i) < GameRules.FIELD_SIZE)
                 {
                     var checkPoint = _fieldManager.Cells[startPoint.X, startPoint.Y + i];
-                    if(checkPoint.Status == CellStatus.Busy || checkPoint.Status == CellStatus.Forbidden)
+                    if(checkPoint.CellStatus == CellStatus.Busy.ToString() || checkPoint.CellStatus == CellStatus.Forbidden.ToString())
                     {
                         return false;
                     }
@@ -173,7 +173,7 @@ namespace Application.Managers
                     {
                         if(IsCellExistAndNotShip(x, y))
                         {
-                            _fieldManager.Cells[x, y].Status = CellStatus.Forbidden;
+                            _fieldManager.Cells[x, y].CellStatus = CellStatus.Forbidden.ToString();
                         }
                     }
                 }
@@ -183,8 +183,8 @@ namespace Application.Managers
         {
            if(x >= 0 && x < GameRules.FIELD_SIZE
                 && y >= 0 && y < GameRules.FIELD_SIZE
-                && _fieldManager.Cells[x, y].Status != CellStatus.Busy
-                && _fieldManager.Cells[x, y].Status != CellStatus.Destroyed)
+                && _fieldManager.Cells[x, y].CellStatus != CellStatus.Busy.ToString()
+                && _fieldManager.Cells[x, y].CellStatus != CellStatus.Destroyed.ToString())
                 return true;
             return false;
         }

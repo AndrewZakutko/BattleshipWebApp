@@ -1,4 +1,6 @@
 using Application.Core;
+using Application.Entities;
+using AutoMapper;
 using Domain;
 using MediatR;
 using Persistence;
@@ -7,26 +9,32 @@ namespace Application.Handlers.GameHandlers
 {
     public class Details
     {
-        public class Query : IRequest<Result<GameDb>>
+        public class Query : IRequest<Result<Game>>
         {
             public Guid GameId { get; set; }
         }
 
-        public class Handler : IRequestHandler<Query, Result<GameDb>>
+        public class Handler : IRequestHandler<Query, Result<Game>>
         {
             private readonly DataContext _context;
-            public Handler(DataContext context)
+            private readonly IMapper _mapper;
+            public Handler(DataContext context, IMapper mapper)
             {
+                _mapper = mapper;
                 _context = context;
             }
 
-            public async Task<Result<GameDb>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<Result<Game>> Handle(Query request, CancellationToken cancellationToken)
             {
                 var game = await _context.Games.FindAsync(request.GameId);
 
-                if(game == null) return Result<GameDb>.Failure("Game not found!");
+                var g = new Game();
 
-                return Result<GameDb>.Success(game);
+                _mapper.Map(game, g);
+
+                if (game == null) return Result<Game>.Failure("Game not found!");
+
+                return Result<Game>.Success(g);
             }
         }
     }

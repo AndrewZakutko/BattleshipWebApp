@@ -9,6 +9,10 @@ namespace Application.Core
         public MappingProfiles()
         {
             CreateMap<GameDb, Game>();
+            CreateMap<CellShipDb, CellShip>();
+            CreateMap<FieldDb, Field>();
+            CreateMap<CellDb, Cell>();
+            CreateMap<ShipDb, Ship>();
         }
     }
 }

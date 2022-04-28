@@ -28,7 +28,6 @@ namespace Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    ShipDbId = table.Column<string>(type: "TEXT", nullable: true),
                     X = table.Column<int>(type: "INTEGER", nullable: false),
                     Y = table.Column<int>(type: "INTEGER", nullable: false),
                     CellStatus = table.Column<string>(type: "TEXT", nullable: false)
@@ -47,25 +46,6 @@ namespace Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Fields", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Games",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    FirstPlayerFieldId = table.Column<string>(type: "TEXT", nullable: true),
-                    SecondPlayerFieldId = table.Column<string>(type: "TEXT", nullable: true),
-                    FirstPlayerName = table.Column<string>(type: "TEXT", nullable: true),
-                    SecondPlayerName = table.Column<string>(type: "TEXT", nullable: true),
-                    NameOfWinner = table.Column<string>(type: "TEXT", nullable: true),
-                    GameStatus = table.Column<string>(type: "TEXT", nullable: false),
-                    MoveCount = table.Column<int>(type: "INTEGER", nullable: false),
-                    ResultInfo = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Games", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -105,20 +85,63 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Games",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    FirstPlayerFieldId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    SecondPlayerFieldId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    FirstPlayerName = table.Column<string>(type: "TEXT", nullable: true),
+                    SecondPlayerName = table.Column<string>(type: "TEXT", nullable: true),
+                    NameOfWinner = table.Column<string>(type: "TEXT", nullable: true),
+                    GameStatus = table.Column<string>(type: "TEXT", nullable: false),
+                    MoveCount = table.Column<int>(type: "INTEGER", nullable: false),
+                    ResultInfo = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Games", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Games_Fields_FirstPlayerFieldId",
+                        column: x => x.FirstPlayerFieldId,
+                        principalTable: "Fields",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Games_Fields_SecondPlayerFieldId",
+                        column: x => x.SecondPlayerFieldId,
+                        principalTable: "Fields",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CellShips",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    CellDbId = table.Column<string>(type: "TEXT", nullable: false),
-                    FieldDbId = table.Column<Guid>(type: "TEXT", nullable: true)
+                    CellId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    ShipId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    FieldId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    CellDbId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    FieldDbId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    ShipDbId = table.Column<Guid>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CellShips", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_CellShips_Cells_CellDbId",
+                        column: x => x.CellDbId,
+                        principalTable: "Cells",
+                        principalColumn: "Id");
+                    table.ForeignKey(
                         name: "FK_CellShips_Fields_FieldDbId",
                         column: x => x.FieldDbId,
                         principalTable: "Fields",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_CellShips_Ships_ShipDbId",
+                        column: x => x.ShipDbId,
+                        principalTable: "Ships",
                         principalColumn: "Id");
                 });
 
@@ -283,9 +306,29 @@ namespace Persistence.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_CellShips_CellDbId",
+                table: "CellShips",
+                column: "CellDbId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CellShips_FieldDbId",
                 table: "CellShips",
                 column: "FieldDbId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CellShips_ShipDbId",
+                table: "CellShips",
+                column: "ShipDbId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Games_FirstPlayerFieldId",
+                table: "Games",
+                column: "FirstPlayerFieldId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Games_SecondPlayerFieldId",
+                table: "Games",
+                column: "SecondPlayerFieldId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -306,13 +349,7 @@ namespace Persistence.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Cells");
-
-            migrationBuilder.DropTable(
                 name: "CellShips");
-
-            migrationBuilder.DropTable(
-                name: "Ships");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -321,10 +358,16 @@ namespace Persistence.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Fields");
+                name: "Cells");
+
+            migrationBuilder.DropTable(
+                name: "Ships");
 
             migrationBuilder.DropTable(
                 name: "Games");
+
+            migrationBuilder.DropTable(
+                name: "Fields");
         }
     }
 }

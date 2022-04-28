@@ -1,5 +1,5 @@
+using Application.Entities;
 using Application.Enums;
-using Application.Models;
 
 namespace Application.Managers
 {
@@ -20,13 +20,13 @@ namespace Application.Managers
                     {
                         X = x,
                         Y = y,
-                        Status = CellStatus.None
+                        CellStatus = CellStatus.None.ToString()
                     };
                     ListCells.Add(new Cell
                     {
                         X = x,
                         Y = y,
-                        Status = CellStatus.None
+                        CellStatus = CellStatus.None.ToString()
                     });
                 }
             }
@@ -41,7 +41,7 @@ namespace Application.Managers
                     {
                         X = x,
                         Y = y,
-                        Status = CellStatus.None
+                        CellStatus = CellStatus.None.ToString()
                     };
                     ListCells.Clear();
                 }

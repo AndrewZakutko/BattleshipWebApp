@@ -27,19 +27,21 @@ namespace Application.Handlers.GameHandlers
             {
                 var game = await _context.Games.FindAsync(request.ConnectUser.GameId);
 
-                if(game == null) return Result<Unit>.Failure("Game is null!");
+                if(game == null) return null;
 
-                var secondPlayer = await _context.Players.AnyAsync(p => p.Name == request.ConnectUser.Name);
+                var secondPlayer = await _context.Players.Where(p => p.Name == request.ConnectUser.Name).FirstAsync();
 
-                if(secondPlayer == false) return Result<Unit>.Failure("Second player not found!");;
+                if(secondPlayer == null) return null;
 
                 var secondPlayerField = new FieldDb();
 
                 await _context.Fields.AddAsync(secondPlayerField);
 
-                game.SecondPlayerFieldId = secondPlayerField.Id.ToString();
+                game.SecondPlayerField = secondPlayerField;
                 game.SecondPlayerName = request.ConnectUser.Name;
                 game.GameStatus = GameStatus.Started.ToString();
+
+                secondPlayer.Game = game;
                 
                 var result = await _context.SaveChangesAsync() > 0;
 

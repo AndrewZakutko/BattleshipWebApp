@@ -1,4 +1,4 @@
-namespace Application.Enums
+namespace Application.Entities
 {
     public static class GameRules
     {

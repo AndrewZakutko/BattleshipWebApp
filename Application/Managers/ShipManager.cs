@@ -1,5 +1,6 @@
+using Application.Entities;
 using Application.Enums;
-using Application.Models;
+
 
 namespace Application.Managers
 {

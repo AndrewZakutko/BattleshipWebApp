@@ -7,5 +7,6 @@ namespace Domain
         public Guid Id { get; set; }
         public string Name { get; set; }
         public GameDb? Game { get; set; }
+        public Guid? GameId { get; set; }
     }
 }

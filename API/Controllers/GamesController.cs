@@ -14,7 +14,7 @@ namespace API.Controllers
             return HandleResult(await Mediator.Send(new List.Query()));
         }
         [HttpGet("/api/games/{id}")]
-        public async Task<ActionResult> GetGame(Guid id)
+        public async Task<IActionResult> GetGame(Guid id)
         {
             return HandleResult(await Mediator.Send(new Details.Query{GameId = id}));
         }
@@ -35,6 +35,11 @@ namespace API.Controllers
         public async Task<IActionResult> Finish(Game game)
         {
             return HandleResult(await Mediator.Send(new Finish.Command {Game = game}));
+        }
+        [HttpDelete("/api/games/delete")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            return HandleResult(await Mediator.Send(new Delete.Command {Id = id}));
         }
     }
 }

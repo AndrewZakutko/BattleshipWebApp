@@ -1,8 +1,10 @@
-namespace Application.Models
+namespace Application.Entities
 {
     public class CellShip
     {
-        public Cell Cell { get; set; }
-        public Ship Ship { get; set; }
+        public Guid Id { get; set; }
+        public Guid? CellId { get; set; }
+        public Guid? ShipId { get; set; }
+        public Guid? FieldId { get; set; }
     }
 }

@@ -1,7 +1,7 @@
-namespace Application.Models
+namespace Application.Entities
 {
     public class Field
     {
-        public ICollection<CellShip> Ships { get; set; }
+        public Guid Id { get; set; }
     }
 }
