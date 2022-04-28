@@ -3,8 +3,8 @@ namespace Domain
     public class GameDb
     {
         public Guid Id { get; set; }
-        public FieldDb? FirstPlayerField { get; set; }
-        public FieldDb? SecondPlayerField { get; set; }
+        public string? FirstPlayerFieldId { get; set; }
+        public string? SecondPlayerFieldId { get; set; }
         public string? FirstPlayerName { get; set; }
         public string? SecondPlayerName { get; set; }
         public string? NameOfWinner { get; set; }

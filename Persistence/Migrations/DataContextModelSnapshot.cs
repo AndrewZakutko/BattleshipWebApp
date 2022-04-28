@@ -27,10 +27,13 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<byte>("X")
+                    b.Property<string>("ShipDbId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("X")
                         .HasColumnType("INTEGER");
 
-                    b.Property<byte>("Y")
+                    b.Property<int>("Y")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
@@ -44,22 +47,16 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid?>("CellDbId")
+                    b.Property<string>("CellDbId")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<Guid?>("FieldDbId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid?>("ShipDbId")
-                        .HasColumnType("TEXT");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("CellDbId");
-
                     b.HasIndex("FieldDbId");
-
-                    b.HasIndex("ShipDbId");
 
                     b.ToTable("CellShips");
                 });
@@ -81,7 +78,7 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid?>("FirstPlayerFieldId")
+                    b.Property<string>("FirstPlayerFieldId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FirstPlayerName")
@@ -100,17 +97,13 @@ namespace Persistence.Migrations
                     b.Property<string>("ResultInfo")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid?>("SecondPlayerFieldId")
+                    b.Property<string>("SecondPlayerFieldId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("SecondPlayerName")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("FirstPlayerFieldId");
-
-                    b.HasIndex("SecondPlayerFieldId");
 
                     b.ToTable("Games");
                 });
@@ -129,10 +122,10 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<byte>("StartPositionX")
+                    b.Property<int>("StartPositionX")
                         .HasColumnType("INTEGER");
 
-                    b.Property<byte>("StartPositionY")
+                    b.Property<int>("StartPositionY")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
@@ -356,32 +349,9 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.CellShipDb", b =>
                 {
-                    b.HasOne("Domain.CellDb", null)
-                        .WithMany("CellShips")
-                        .HasForeignKey("CellDbId");
-
                     b.HasOne("Domain.FieldDb", null)
                         .WithMany("CellShips")
                         .HasForeignKey("FieldDbId");
-
-                    b.HasOne("Domain.ShipDb", null)
-                        .WithMany("CellShips")
-                        .HasForeignKey("ShipDbId");
-                });
-
-            modelBuilder.Entity("Domain.GameDb", b =>
-                {
-                    b.HasOne("Domain.FieldDb", "FirstPlayerField")
-                        .WithMany()
-                        .HasForeignKey("FirstPlayerFieldId");
-
-                    b.HasOne("Domain.FieldDb", "SecondPlayerField")
-                        .WithMany()
-                        .HasForeignKey("SecondPlayerFieldId");
-
-                    b.Navigation("FirstPlayerField");
-
-                    b.Navigation("SecondPlayerField");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -444,17 +414,7 @@ namespace Persistence.Migrations
                     b.Navigation("Game");
                 });
 
-            modelBuilder.Entity("Domain.CellDb", b =>
-                {
-                    b.Navigation("CellShips");
-                });
-
             modelBuilder.Entity("Domain.FieldDb", b =>
-                {
-                    b.Navigation("CellShips");
-                });
-
-            modelBuilder.Entity("Domain.ShipDb", b =>
                 {
                     b.Navigation("CellShips");
                 });

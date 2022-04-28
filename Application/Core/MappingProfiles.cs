@@ -1,3 +1,4 @@
+using Application.Entities;
 using AutoMapper;
 using Domain;
 
@@ -7,7 +8,7 @@ namespace Application.Core
     {
         public MappingProfiles()
         {
-            CreateMap<GameDb, GameDb>();
+            CreateMap<GameDb, Game>();
         }
     }
 }
