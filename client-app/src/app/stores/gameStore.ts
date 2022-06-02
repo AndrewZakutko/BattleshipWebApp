@@ -1,38 +1,124 @@
-import { makeAutoObservable, runInAction } from "mobx";
-import agent from "../api/agent";
 import { history } from "../..";
-import { User, UserConnectValues } from "../models/user";
-import { Game } from "../models/game";
+import agent from "../api/agent";
+import AddShip from "../models/addShip";
+import { Game } from "../models/game"
+import { store } from "./store";
+import { FinishGame } from "../models/game";
 
 export default class GameStore {
-    game: Game | null = null;
-    connectUser: UserConnectValues = { 
-        gameId: '', 
-        name: ''
-    }
+    games: Game[] | null = null;
+    historyGames: Game[] | null = null;
+    loadingInitial = false;
+    isReady = false;
+    isFirstPlayerReady = false;
+    isSecondPlayerReady = false;
 
-    constructor() {
-        makeAutoObservable(this)
-    }
+    finishGame: FinishGame = {
+        gameId: '',
+        nameOfWinner: '',
+        resultInfo: ''
+    };
 
-    create = async (user: User) => {
+
+    loadGames = async () => {
+        this.loadingInitial = true;
         try {
-            await agent.Games.create(user);
-            history.push('/preparegamepage');
+            this.games = await agent.Games.list();
+            this.loadingInitial = false;
+        } catch (error) {
+            console.log(error);
+            this.loadingInitial = false;
         }
-        catch (error) {
+    }
+
+    loadFirstPlayerReady = async () => {
+        try {
+            this.isFirstPlayerReady = await agent.Account.checkStatus(store.userStore.game!.firstPlayerName!);
+        } catch (error) {
             console.log(error);
         }
     }
 
-    connect = async (id: string, user: User) => {
+    loadSecondPlayerReady = async () => {
         try {
-            this.connectUser.gameId = id;
-            this.connectUser.name = user.name;
-            await agent.Games.connect(this.connectUser);
-            history.push('/preparegamepage');
+            this.isSecondPlayerReady = await agent.Account.checkStatus(store.userStore.game!.secondPlayerName!);
+        } catch (error) {
+            console.log(error);
         }
-        catch (error) {
+    }
+
+    loadGameStatus = async () => {
+        try {
+            var game = await agent.Games.getByName(store.userStore.user!.name);
+            if(game.gameStatus == 'Started')
+            {
+                history.push('/game');
+            }
+            if(this.isFirstPlayerReady && this.isSecondPlayerReady)
+            {
+                await agent.Games.changeStatusToStarted(store.userStore.game!.id);
+                history.push('/game');
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    clearField = async (id: string) => {
+        try {
+            await agent.Fields.clear(id);
+        } catch(error) {
+            console.log(error);
+        }
+    }
+
+    loadHistoryGames = async (name: string) => {
+        this.loadingInitial = true;
+        try {
+            this.historyGames = await agent.Games.historyList(name);
+            this.loadingInitial = false;
+        } catch (error) {
+            console.log(error);
+            this.loadingInitial = false;
+        }
+    }
+
+    loadCountOfShipsAlive = async () => {
+        try {
+            var game = await agent.Games.getByName(store.userStore.user!.name);
+            if(game.gameStatus == 'Finished')
+            {
+                history.push('/gamefinish');
+            }
+
+            var countOfFisrtPlayerShipsAlive = await agent.Fields.checkCountOfShipsAlive(store.userStore.game!.firstPlayerFieldId!);
+            var countOfSecondPlayerShipsAlive = await agent.Fields.checkCountOfShipsAlive(store.userStore.game!.secondPlayerFieldId!);
+
+            if(countOfFisrtPlayerShipsAlive == 0) {
+                this.finishGame.gameId = store.userStore.game!.id;
+                this.finishGame.nameOfWinner = store.userStore.game!.secondPlayerName;
+                this.finishGame.resultInfo = await agent.Fields.fieldInfo(store.userStore.game!.secondPlayerFieldId!);
+
+                await agent.Games.finish(this.finishGame);
+                history.push('/gamefinish');
+            }
+            if(countOfSecondPlayerShipsAlive == 0) {
+                this.finishGame.gameId = store.userStore.game!.id;
+                this.finishGame.nameOfWinner = store.userStore.game!.firstPlayerName;
+                this.finishGame.resultInfo = await agent.Fields.fieldInfo(store.userStore.game!.firstPlayerFieldId!);
+
+                await agent.Games.finish(this.finishGame);
+                history.push('/gamefinish');
+            }
+        } catch(error) {
+            console.log(error);
+        }
+    }
+
+    addShip = async (ship: AddShip) => {
+        try {
+            await agent.Ship.add(ship);
+        } catch (error) {
             console.log(error);
         }
     }

@@ -1,5 +1,3 @@
-using Application.Enums;
-
 namespace Application.Entities
 {
     public class Ship
@@ -11,3 +9,4 @@ namespace Application.Entities
         public string ShipRank { get; set; }
     }
 }
+

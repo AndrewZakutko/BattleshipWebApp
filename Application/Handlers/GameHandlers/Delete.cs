@@ -23,10 +23,13 @@ namespace Application.Handlers.GameHandlers
             {
                 var game = await _context.Games.FindAsync(request.Id);
                 if(game == null) return null;
+
                 _context.Remove(game);
                 var result = await _context.SaveChangesAsync() > 0;
-                if (!result) return Result<Unit>.Failure("Failed to delete ship");
-                return Result<Unit>.Success(Unit.Value);
+
+                if (result) return Result<Unit>.Success(Unit.Value);
+
+                return Result<Unit>.Failure("Failed to delete ship");
             }
         }
     }

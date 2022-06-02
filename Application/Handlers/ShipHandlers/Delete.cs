@@ -23,10 +23,12 @@ namespace Application.Handlers.ShipHandlers
             {
                 var ship = await _context.Ships.FindAsync(request.Id);
                 if(ship == null) return null;
+
                 _context.Remove(ship);
                 var result = await _context.SaveChangesAsync() > 0;
-                if (!result) return Result<Unit>.Failure("Failed to delete ship");
-                return Result<Unit>.Success(Unit.Value);
+                if (result) return Result<Unit>.Success(Unit.Value);
+
+                return Result<Unit>.Failure("Failed to delete ship");
             }
         }
     }

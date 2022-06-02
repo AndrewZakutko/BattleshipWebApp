@@ -1,5 +1,6 @@
 using Application.Core;
 using Application.Handlers.GameHandlers;
+using Application.Managers;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -26,7 +27,10 @@ namespace API.Extensions
             });
             services.AddMediatR(typeof(List.Handler).Assembly);
             services.AddAutoMapper(typeof(MappingProfiles).Assembly);
-
+            services.AddControllers();
+            services.AddTransient<GameManager>();
+            services.AddTransient<FieldManager>();
+            services.AddTransient<ShootManager>();
             return services;
         }
     }

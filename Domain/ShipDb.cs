@@ -7,6 +7,6 @@ namespace Domain
         public int StartPositionY { get; set; }
         public string ShipDirection { get; set; }
         public string ShipRank { get; set; }
-        public List<CellShipDb> CellShips { get; set; } = new();
+        public virtual List<CellShipDb> CellShips { get; set; }
     }
 }

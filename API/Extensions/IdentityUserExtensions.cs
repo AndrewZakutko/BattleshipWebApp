@@ -1,14 +1,10 @@
 using System.Text;
 using API.Services;
-using Application.Core;
-using Application.Handlers.GameHandlers;
 using Domain;
-using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
 using Persistence;
 
 namespace API.Extensions
@@ -17,11 +13,13 @@ namespace API.Extensions
     {
         public static IServiceCollection AddIdentityServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddIdentityCore<PlayerDb>(opt => {
+            services.AddIdentityCore<PlayerDb>(opt =>
+            {
                 opt.Password.RequireNonAlphanumeric = false;
             })
             .AddEntityFrameworkStores<DataContext>()
-            .AddSignInManager<SignInManager<PlayerDb>>();
+            .AddSignInManager<SignInManager<PlayerDb>>()
+            .AddDefaultTokenProviders();
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["TokenKey"]));
 

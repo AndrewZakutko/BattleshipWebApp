@@ -25,13 +25,16 @@ namespace Application.Handlers.ShipHandlers
             public async Task<Result<List<Ship>>> Handle(Query request, CancellationToken cancellationToken)
             {
                 var shipList = await _context.Ships.ToListAsync();
+
                 var list = new List<Ship>();
+
                 foreach (var ship in shipList)
                 {
                     var s = new Ship();
                     _mapper.Map(ship, s);
                     list.Add(s);
                 }
+
                 return Result<List<Ship>>.Success(list);
             }
         }

@@ -13,48 +13,45 @@ export default observer(function LoginForm() {
         password: Yup.string().required('Required')
     })
     return( 
-        <div className='text-field'>
-            <h1>Login</h1>
-            <Formik
-                initialValues={{email: '', password: ''}}
-                onSubmit={(values, {setSubmitting}) => {
-                    userStore.login(values);
-                    setSubmitting(false);
-                }}
-                validationSchema={validate}
-            >
-                {({values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting}) => (
-                    <form onSubmit={handleSubmit}>
-                        <label className='text-field__label'>Email:</label>
-                        <input
-                            placeholder="Email"
-                            className='text-field__input'
-                            name="email"
-                            type="text"
-                            value={values.email}
-                            onBlur={handleBlur}
-                            onChange={handleChange}
-                        />
-                        <div>
-                            {errors.email && touched.email && errors.email}
-                        </div>
-                        <label className='text-field__label'>Password:</label>
-                        <input
-                            placeholder="Password"
-                            className='text-field__input'
-                            name="password"
-                            type="password"
-                            onBlur={handleBlur}
-                            value={values.password}
-                            onChange={handleChange}
-                        />
-                        <div>
-                            {errors.password && touched.password && errors.password}
-                        </div>
-                        <Button positive disabled={isSubmitting} style={{marginTop: '10px'}} type='submit'>Login</Button>
-                    </form>
-                )}
-            </Formik>
-        </div>
+        <Formik
+            initialValues={{email: '', password: ''}}
+            onSubmit={(values, {setSubmitting}) => {
+                userStore.login(values);
+                setSubmitting(false);
+            }}
+            validationSchema={validate}
+        >
+            {({values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting}) => (
+                <form onSubmit={handleSubmit}>
+                    <label className='text-field__label'>Email:</label>
+                    <input
+                        placeholder="Email"
+                        className='text-field__input'
+                        name="email"
+                        type="text"
+                        value={values.email}
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                    />
+                    <div>
+                        {errors.email && touched.email && errors.email}
+                    </div>
+                    <label className='text-field__label'>Password:</label>
+                    <input
+                        placeholder="Password"
+                        className='text-field__input'
+                        name="password"
+                        type="password"
+                        onBlur={handleBlur}
+                        value={values.password}
+                        onChange={handleChange}
+                    />
+                    <div>
+                        {errors.password && touched.password && errors.password}
+                    </div>
+                    <Button positive disabled={isSubmitting} style={{marginTop: '10px'}} type='submit'>Login</Button>
+                </form>
+            )}
+        </Formik>
     )
 })

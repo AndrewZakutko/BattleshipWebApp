@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using API.DTOs;
 using API.Services;
+using Application.Handlers.AccountHandlers;
 using Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -11,24 +12,25 @@ namespace API.Controllers
 {
     [AllowAnonymous]
     [ApiController]
-    public class AccountController : ControllerBase
+    [Route("api/[controller]")]
+    public class AccountController : BaseApiController
     {
         private readonly UserManager<PlayerDb> _userManager;
         private readonly SignInManager<PlayerDb> _signInManager;
         private readonly TokenService _tokenService;
-        public AccountController(UserManager<PlayerDb> userManager,
-            SignInManager<PlayerDb> signInManager, TokenService tokenService)
+
+        public AccountController(UserManager<PlayerDb> userManager, SignInManager<PlayerDb> signInManager, 
+            TokenService tokenService,IHttpContextAccessor contextAccessor)
         {
             _tokenService = tokenService;
             _signInManager = signInManager;
             _userManager = userManager;
         }
 
-        [HttpPost("api/account/login")]
+        [HttpPost("login")]
         public async Task<ActionResult<PlayerDto>> Login(LoginDto loginDto)
         {
             var user = await _userManager.FindByEmailAsync(loginDto.Email);
-
             if (user == null) return Unauthorized();
 
             var result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
@@ -41,7 +43,7 @@ namespace API.Controllers
             return Unauthorized();
         }
 
-        [HttpPost("api/account/register")]
+        [HttpPost("register")]
         public async Task<ActionResult<PlayerDto>> Register(RegisterDto registerDto)
         {
             if(await _userManager.Users.AnyAsync(x => x.Email == registerDto.Email))
@@ -61,7 +63,9 @@ namespace API.Controllers
             {
                 Name = registerDto.Name,
                 Email = registerDto.Email,
-                UserName = registerDto.Username
+                UserName = registerDto.Username,
+                IsReady = false,
+                IsGoing = false
             };
 
             var result = await _userManager.CreateAsync(user, registerDto.Password);
@@ -75,20 +79,46 @@ namespace API.Controllers
         }
 
         [Authorize]
-        [HttpGet("api/account/current")]
+        [HttpGet]
         public async Task<ActionResult<PlayerDto>> GetCurrentUser()
         {
+
             var user = await _userManager.FindByEmailAsync(User.FindFirstValue(ClaimTypes.Email));
 
             return CreatePlayerObject(user);
         }
+
+        [HttpGet("changeStatus/{name}")]
+        public async Task<IActionResult> ChangeStatusToReady(string name)
+        {
+            return HandleResult(await Mediator.Send(new ChangeToReady.Command { Name = name }));
+        }
+
+        [HttpGet("checkStatus/{name}")]
+        public async Task<IActionResult> CheckStatus(string name)
+        {
+            return HandleResult(await Mediator.Send(new CheckToReady.Command { Name = name }));
+        }
+
+        [HttpGet("changeStatusGoing/{name}")]
+        public async Task<IActionResult> ChangeStatusGoing(string name)
+        {
+            return HandleResult(await Mediator.Send(new ChangeToReadyGoing.Command { Name = name }));
+        }
+
+        [HttpGet("checkStatusGoing/{name}")]
+        public async Task<IActionResult> CheckStatusGoing(string name)
+        {
+            return HandleResult(await Mediator.Send(new CheckStatusGoing.Command { Name = name }));
+        }
+
 
         private PlayerDto CreatePlayerObject(PlayerDb player)
         {
             return new PlayerDto
             {
                 Name = player.Name,
-                Token = _tokenService.CreateToken(player)
+                Token = _tokenService.CreateToken(player),
             };
         }
     }

@@ -15,7 +15,7 @@ namespace Persistence.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "6.0.4");
+            modelBuilder.HasAnnotation("ProductVersion", "6.0.5");
 
             modelBuilder.Entity("Domain.CellDb", b =>
                 {
@@ -44,19 +44,10 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid?>("CellDbId")
-                        .HasColumnType("TEXT");
-
                     b.Property<Guid?>("CellId")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid?>("FieldDbId")
-                        .HasColumnType("TEXT");
-
                     b.Property<Guid?>("FieldId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("ShipDbId")
                         .HasColumnType("TEXT");
 
                     b.Property<Guid?>("ShipId")
@@ -64,11 +55,11 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CellDbId");
+                    b.HasIndex("CellId");
 
-                    b.HasIndex("FieldDbId");
+                    b.HasIndex("FieldId");
 
-                    b.HasIndex("ShipDbId");
+                    b.HasIndex("ShipId");
 
                     b.ToTable("CellShips");
                 });
@@ -97,7 +88,6 @@ namespace Persistence.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("GameStatus")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("MoveCount")
@@ -124,6 +114,88 @@ namespace Persistence.Migrations
                     b.ToTable("Games");
                 });
 
+            modelBuilder.Entity("Domain.PlayerDb", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<Guid?>("GameId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsGoing")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsReady")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("MoveCount")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GameId");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
             modelBuilder.Entity("Domain.ShipDb", b =>
                 {
                     b.Property<Guid>("Id")
@@ -147,6 +219,26 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Ships");
+                });
+
+            modelBuilder.Entity("Domain.ShootDb", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("FieldId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("X")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Y")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Shoots");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -196,76 +288,6 @@ namespace Persistence.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetRoleClaims", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex");
-
-                    b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -347,50 +369,54 @@ namespace Persistence.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.PlayerDb", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-                    b.Property<Guid?>("GameId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasIndex("GameId");
-
-                    b.HasDiscriminator().HasValue("PlayerDb");
-                });
-
             modelBuilder.Entity("Domain.CellShipDb", b =>
                 {
-                    b.HasOne("Domain.CellDb", null)
+                    b.HasOne("Domain.CellDb", "Cell")
                         .WithMany("CellShips")
-                        .HasForeignKey("CellDbId");
+                        .HasForeignKey("CellId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Domain.FieldDb", null)
+                    b.HasOne("Domain.FieldDb", "Field")
                         .WithMany("CellShips")
-                        .HasForeignKey("FieldDbId");
+                        .HasForeignKey("FieldId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Domain.ShipDb", null)
+                    b.HasOne("Domain.ShipDb", "Ship")
                         .WithMany("CellShips")
-                        .HasForeignKey("ShipDbId");
+                        .HasForeignKey("ShipId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Cell");
+
+                    b.Navigation("Field");
+
+                    b.Navigation("Ship");
                 });
 
             modelBuilder.Entity("Domain.GameDb", b =>
                 {
                     b.HasOne("Domain.FieldDb", "FirstPlayerField")
-                        .WithMany()
-                        .HasForeignKey("FirstPlayerFieldId");
+                        .WithMany("FirstPlayerGames")
+                        .HasForeignKey("FirstPlayerFieldId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Domain.FieldDb", "SecondPlayerField")
-                        .WithMany()
-                        .HasForeignKey("SecondPlayerFieldId");
+                        .WithMany("SecondPlayerGames")
+                        .HasForeignKey("SecondPlayerFieldId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("FirstPlayerField");
 
                     b.Navigation("SecondPlayerField");
+                });
+
+            modelBuilder.Entity("Domain.PlayerDb", b =>
+                {
+                    b.HasOne("Domain.GameDb", "Game")
+                        .WithMany("Players")
+                        .HasForeignKey("GameId");
+
+                    b.Navigation("Game");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -404,7 +430,7 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Domain.PlayerDb", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -413,7 +439,7 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Domain.PlayerDb", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -428,7 +454,7 @@ namespace Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Domain.PlayerDb", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -437,20 +463,11 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Domain.PlayerDb", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Domain.PlayerDb", b =>
-                {
-                    b.HasOne("Domain.GameDb", "Game")
-                        .WithMany("Players")
-                        .HasForeignKey("GameId");
-
-                    b.Navigation("Game");
                 });
 
             modelBuilder.Entity("Domain.CellDb", b =>
@@ -461,6 +478,10 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.FieldDb", b =>
                 {
                     b.Navigation("CellShips");
+
+                    b.Navigation("FirstPlayerGames");
+
+                    b.Navigation("SecondPlayerGames");
                 });
 
             modelBuilder.Entity("Domain.GameDb", b =>

@@ -6,6 +6,6 @@ namespace Domain
         public int X { get; set; }
         public int Y { get; set; }
         public string CellStatus { get; set; }
-        public List<CellShipDb> CellShips { get; set; } = new();
+        public virtual List<CellShipDb> CellShips { get; set; }
     }
 }

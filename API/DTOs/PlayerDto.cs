@@ -1,3 +1,5 @@
+using Domain;
+
 namespace API.DTOs
 {
     public class PlayerDto

@@ -13,6 +13,7 @@ namespace Application.Core
             CreateMap<FieldDb, Field>();
             CreateMap<CellDb, Cell>();
             CreateMap<ShipDb, Ship>();
+            CreateMap<ShootDb, Shoot>();
         }
     }
 }

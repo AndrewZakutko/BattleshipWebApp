@@ -9,3 +9,9 @@ export interface Game {
     moveCount: number;
     resultInfo?: string;
 }
+
+export interface FinishGame {
+    gameId: string;
+    nameOfWinner: string | undefined;
+    resultInfo: string;
+}

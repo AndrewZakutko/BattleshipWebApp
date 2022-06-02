@@ -1,7 +1,6 @@
 using Application.Core;
 using Application.Entities;
 using AutoMapper;
-using Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
@@ -27,18 +26,19 @@ namespace Application.Handlers.GameHandlers
 
             public async Task<Result<List<Game>>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var gameList = await _context.Games.ToListAsync();
-                var list = new List<Game>();
-                foreach(var game in gameList)
+                var gameListDb = await _context.Games.ToListAsync();
+                if (gameListDb == null) return null;
+
+                var gameList = new List<Game>();
+
+                foreach(var game in gameListDb)
                 {
                     var g = new Game();
                     _mapper.Map(game, g);
-                    list.Add(g);
+                    gameList.Add(g);
                 }
 
-                if (gameList == null) return Result<List<Game>>.Failure("Game list is null!");
-
-                return Result<List<Game>>.Success(list);
+                return Result<List<Game>>.Success(gameList);
             }
         }
     }

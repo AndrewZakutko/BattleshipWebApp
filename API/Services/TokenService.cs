@@ -18,8 +18,8 @@ namespace API.Services
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, player.Name),
-                new Claim(ClaimTypes.NameIdentifier, player.Id.ToString()),
+                new Claim(ClaimTypes.Name, player.UserName),
+                new Claim(ClaimTypes.NameIdentifier, player.Id),
                 new Claim(ClaimTypes.Email, player.Email)
             };
 
