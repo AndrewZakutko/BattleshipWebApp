@@ -1,12 +1,14 @@
 import { observer } from "mobx-react-lite";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "semantic-ui-react";
 import { useStore } from "../../app/stores/store";
 import PlayerField from "../field/PlayerField";
 import OpponentField from "../field/OpponentField";
 import ShootForm from "../form/ShootForm";
+import LoadingComponent from "../../app/layout/LoadingComponent";
 
 export default observer(function Game(){
+    const [loadingGame, setLoadingGame] = useState(true);
     const { cellStore, userStore } = useStore();
 
     useEffect(() => {
@@ -20,15 +22,19 @@ export default observer(function Game(){
                 cellStore.loadPlayerCells(userStore.game!.firstPlayerFieldId!);
                 cellStore.loadOpponentCells(userStore.game!.secondPlayerFieldId!);
                 userStore.loadGoingStatus();
+                setLoadingGame(false);
             }
             else
             {
                 cellStore.loadPlayerCells(userStore.game!.secondPlayerFieldId!);
                 cellStore.loadOpponentCells(userStore.game!.firstPlayerFieldId!);
                 userStore.loadGoingStatus();
+                setLoadingGame(false);
             }
         }, 4500);
     }, []);
+
+    if(loadingGame) return <LoadingComponent content="Loading game..."/>
 
     return(
         <Container>

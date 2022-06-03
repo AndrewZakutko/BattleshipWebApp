@@ -8,7 +8,9 @@ export default observer(function GameFinish(){
     const { userStore } = useStore();
 
     useEffect(() => {
-        userStore.loadGame();
+        return () => {
+            userStore.loadGame();
+        }
     }, []);
 
     return(

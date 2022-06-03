@@ -21,13 +21,10 @@ export default class GameStore {
 
 
     loadGames = async () => {
-        this.loadingInitial = true;
         try {
             this.games = await agent.Games.list();
-            this.loadingInitial = false;
         } catch (error) {
             console.log(error);
-            this.loadingInitial = false;
         }
     }
 
@@ -84,18 +81,22 @@ export default class GameStore {
                 this.finishGame.gameId = store.userStore.game!.id;
                 this.finishGame.nameOfWinner = store.userStore.game!.secondPlayerName;
                 this.finishGame.resultInfo = await agent.Fields.fieldInfo(store.userStore.game!.secondPlayerFieldId!);
+                store.userStore.game!.nameOfWinner = store.userStore.game!.firstPlayerName;
+                store.userStore.game!.moveCount = store.userStore.moveCount;
+                store.userStore.game!.resultInfo = this.finishGame.resultInfo;
 
                 await agent.Games.finish(this.finishGame);
-                store.userStore.loadGame();
                 history.push('/gamefinish');
             }
             if(countOfSecondPlayerShipsAlive == 0) {
                 this.finishGame.gameId = store.userStore.game!.id;
                 this.finishGame.nameOfWinner = store.userStore.game!.firstPlayerName;
                 this.finishGame.resultInfo = await agent.Fields.fieldInfo(store.userStore.game!.firstPlayerFieldId!);
+                store.userStore.game!.nameOfWinner = store.userStore.game!.firstPlayerName;
+                store.userStore.game!.moveCount = store.userStore.moveCount;
+                store.userStore.game!.resultInfo = this.finishGame.resultInfo;
 
                 await agent.Games.finish(this.finishGame);
-                store.userStore.loadGame();
                 history.push('/gamefinish');
             }
         } catch(error) {

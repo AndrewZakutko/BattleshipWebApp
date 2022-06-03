@@ -13,6 +13,7 @@ export default class UserStore {
     isGoing: Boolean = false;
     fieldId: string | null = null;
     loadingInitial = false;
+    moveCount: number = 0;
     connectUser: UserConnectValues = { 
         gameId: '', 
         name: ''
@@ -230,9 +231,11 @@ export default class UserStore {
                     store.cellStore.opponentCells = await agent.Cells.getCells(this.game!.firstPlayerFieldId!);
                 }
                 store.gameStore.checkCountOfShipsAliveOnField();
+                this.moveCount += 1;
             }
             else{
                 console.log("Your opponent is going now!");
+                this.moveCount += 1;
             }
         } catch(error) {
             console.log(error);

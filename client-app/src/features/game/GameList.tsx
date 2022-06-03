@@ -1,16 +1,17 @@
 import { observer } from "mobx-react-lite";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Container } from "semantic-ui-react";
-import LoadingComponent from "../../app/layout/LoadingComponent";
 import { User } from "../../app/models/user";
 import { useStore } from "../../app/stores/store";
 
 export default observer(function GameList() {
     const {gameStore, userStore} = useStore();
+    const [games, setGames] = useState(gameStore.games);
 
     useEffect(() => {
         setInterval(() => {
             gameStore.loadGames();
+            setGames(gameStore.games);
         }, 4500);
     }, []);
 
@@ -18,20 +19,18 @@ export default observer(function GameList() {
         userStore.connectToGame(id, user);   
     }
 
-    if(gameStore.loadingInitial) return <LoadingComponent content="Loading app"/>
-
     return(
         <>
             <Container>
                 <h1>List of games:</h1>
-                {gameStore.games != null ?
+                {games != null ?
                 (
                     <>
                         <ol className="bullet">
-                            {gameStore.games!.map((game) => 
+                            {games!.map((game) => 
                             (
                                 <>
-                                    {game.gameStatus == 'NotReady' && game.firstPlayerName != userStore.user!.name ? 
+                                    {game.gameStatus == 'NotReady' && game.firstPlayerName != userStore.user!.name && game.secondPlayerName == null ? 
                                     (
                                         <li key={game.id}>
                                             <p>Owner: {game.firstPlayerName}</p>
@@ -53,6 +52,7 @@ export default observer(function GameList() {
                 (
                     <>
                         <h3>List of games is empty</h3>
+                        <p>Wait for someone to create or create yourself</p>
                     </>
                 )
                 }
