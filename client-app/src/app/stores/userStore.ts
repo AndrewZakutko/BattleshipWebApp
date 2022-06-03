@@ -1,7 +1,7 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import { history } from "../..";
 import agent from "../api/agent";
-import { FinishGame, Game } from "../models/game";
+import { Game } from "../models/game";
 import { User, UserConnectValues, UserFormValues } from "../models/user";
 import { store } from "./store";
 import { Shoot } from "../models/shoot";
@@ -12,7 +12,6 @@ export default class UserStore {
     isReadyToGame: Boolean = false;
     isGoing: Boolean = false;
     fieldId: string | null = null;
-    loadingGame = false;
     loadingInitial = false;
     connectUser: UserConnectValues = { 
         gameId: '', 
@@ -148,7 +147,7 @@ export default class UserStore {
         try {
             console.log(user);
             this.game = await agent.Games.create(user);
-            this.fieldId = this.game.firstPlayerFieldId as string;
+            this.fieldId = this.game.firstPlayerFieldId!;
             history.push('/gameprepare');
         }
         catch (error) {
@@ -161,7 +160,7 @@ export default class UserStore {
             this.connectUser.gameId = id;
             this.connectUser.name = user.name;
             this.game = await agent.Games.connect(this.connectUser);
-            this.fieldId = this.game.firstPlayerFieldId as string;
+            this.fieldId = this.game.firstPlayerFieldId!;
             history.push('/gameprepare');
         }
         catch (error) {
@@ -193,16 +192,13 @@ export default class UserStore {
         }
     }
 
-    loadLoadingGame = async () => {
+    loadInitialGoingStatus = async () => {
         try {
-            this.game = await agent.Games.getByName(this.user!.name);
-            if(this.game.secondPlayerName != null)
+            var firstPlayerStatusGoing = await agent.Account.checkStatusGoing(this.game!.firstPlayerName!);
+            var secondPlayerStatusGoing = await agent.Account.checkStatusGoing(this.game!.secondPlayerName!);
+            if(firstPlayerStatusGoing == false && secondPlayerStatusGoing == false)
             {
-                this.loadingGame = false;
-            }
-            else
-            {
-                this.loadingGame = true;
+                await agent.Account.changeToReadyGoing(this.game!.firstPlayerName!);
             }
         } catch (error) {
             console.log(error);
@@ -223,6 +219,17 @@ export default class UserStore {
             {
                 await agent.Shoots.takeAShoot(shoot);
                 this.isGoing = await agent.Account.checkStatusGoing(this.user!.name);
+                if(this.game!.firstPlayerName == this.user!.name)
+                {
+                    store.cellStore.playerCells = await agent.Cells.getCells(this.game!.firstPlayerFieldId!);
+                    store.cellStore.opponentCells = await agent.Cells.getCells(this.game!.secondPlayerFieldId!);
+                }
+                if(this.game!.secondPlayerName == this.user!.name)
+                {
+                    store.cellStore.playerCells = await agent.Cells.getCells(this.game!.secondPlayerFieldId!);
+                    store.cellStore.opponentCells = await agent.Cells.getCells(this.game!.firstPlayerFieldId!);
+                }
+                store.gameStore.checkCountOfShipsAliveOnField();
             }
             else{
                 console.log("Your opponent is going now!");

@@ -21,6 +21,8 @@ export default observer(function(){
                     <ol className="bullet">
                     {gameStore.historyGames!.map(game => (
                         <li key={game.id}>
+                            <p>First player: {game.firstPlayerName}</p>
+                            <p>Second player: {game.secondPlayerName}</p>
                             <p>Name of winner: {game.nameOfWinner}</p>
                             <p>Count of moves: {game.moveCount}</p>
                             <p>Result info: {game.resultInfo}</p>

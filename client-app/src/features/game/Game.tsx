@@ -5,12 +5,30 @@ import { useStore } from "../../app/stores/store";
 import PlayerField from "../field/PlayerField";
 import OpponentField from "../field/OpponentField";
 import ShootForm from "../form/ShootForm";
-import LoadingComponent from "../../app/layout/LoadingComponent";
 
 export default observer(function Game(){
-    const { cellStore, userStore, gameStore } = useStore();
+    const { cellStore, userStore } = useStore();
 
-    if(cellStore.loadingInitial) return <LoadingComponent content="Loading app"/>
+    useEffect(() => {
+        userStore.loadInitialGoingStatus();
+    }, []);
+
+    useEffect(() => {
+        setInterval(() => {
+            if(userStore.user!.name == userStore.game!.firstPlayerName)
+            {
+                cellStore.loadPlayerCells(userStore.game!.firstPlayerFieldId!);
+                cellStore.loadOpponentCells(userStore.game!.secondPlayerFieldId!);
+                userStore.loadGoingStatus();
+            }
+            else
+            {
+                cellStore.loadPlayerCells(userStore.game!.secondPlayerFieldId!);
+                cellStore.loadOpponentCells(userStore.game!.firstPlayerFieldId!);
+                userStore.loadGoingStatus();
+            }
+        }, 4500);
+    }, []);
 
     return(
         <Container>

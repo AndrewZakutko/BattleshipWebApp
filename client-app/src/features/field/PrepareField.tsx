@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '../../app/stores/store';
 import Cell from '../cell/Cell';
 
 export default observer(function PrepareField() {
-    const { userStore, cellStore, gameStore } = useStore();
-
-    useEffect(() => {
-        cellStore.loadCells(userStore.fieldId!);
-        gameStore.loadFirstPlayerReady();
-        gameStore.loadSecondPlayerReady();
-        gameStore.loadGameStatus();
-    });
+    const { cellStore } = useStore();
 
     return (
         <>

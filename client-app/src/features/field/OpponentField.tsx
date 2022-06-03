@@ -4,22 +4,7 @@ import { useStore } from "../../app/stores/store";
 import SecondPlayerCell from "../cell/OpponentCell";
 
 export default observer(function OpponentField(){
-    const { userStore, cellStore, gameStore } = useStore();
-
-    useEffect(() => {
-        if(userStore.user!.name == userStore.game!.firstPlayerName)
-        {
-            cellStore.loadOpponentCells(userStore.game!.secondPlayerFieldId!);
-            userStore.loadGoingStatus();
-            gameStore.loadCountOfShipsAlive();
-        }
-        else
-        {
-            cellStore.loadOpponentCells(userStore.game!.firstPlayerFieldId!);
-            userStore.loadGoingStatus();
-            gameStore.loadCountOfShipsAlive();
-        }
-    });
+    const { cellStore } = useStore();
     
     return(
         <>

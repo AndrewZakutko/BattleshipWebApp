@@ -9,8 +9,10 @@ export default observer(function GameList() {
     const {gameStore, userStore} = useStore();
 
     useEffect(() => {
-        gameStore.loadGames();
-    });
+        setInterval(() => {
+            gameStore.loadGames();
+        }, 4500);
+    }, []);
 
     const handleConnect = (id: string, user: User) => {
         userStore.connectToGame(id, user);   
