@@ -27,9 +27,9 @@ export default observer(function Navbar() {
                   <Menu.Item>
                     <Dropdown text={`Hi, ${userStore.user!.name}!`}>
                       <Dropdown.Menu>
-                        <Dropdown.Item onClick={userStore.logout} text='Logout'/>
-                        <Dropdown.Item as={Link} to={'/gamehistory'} text='History'/>
                         <Dropdown.Item as={Link} to={'/gamelist'} text='List of games'/>
+                        <Dropdown.Item as={Link} to={'/gamehistory'} text='History'/>
+                        <Dropdown.Item onClick={userStore.logout} text='Logout'/>
                       </Dropdown.Menu>
                     </Dropdown>
                   </Menu.Item>

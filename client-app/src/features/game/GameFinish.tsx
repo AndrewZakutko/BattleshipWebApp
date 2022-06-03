@@ -1,17 +1,22 @@
 import { observer } from "mobx-react-lite";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Container } from "semantic-ui-react";
+import LoadingComponent from "../../app/layout/LoadingComponent";
 import { useStore } from "../../app/stores/store";
 
 export default observer(function GameFinish(){
     const { userStore } = useStore();
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        setLoading(false);
         return () => {
             userStore.loadGame();
         }
     }, []);
+
+    if(loading) return <LoadingComponent content="Loading result info..."/>
 
     return(
         <Container>

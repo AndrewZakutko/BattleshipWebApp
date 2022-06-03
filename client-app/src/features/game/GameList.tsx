@@ -1,23 +1,32 @@
 import { observer } from "mobx-react-lite";
 import React, { useEffect, useState } from "react";
 import { Button, Container } from "semantic-ui-react";
+import LoadingComponent from "../../app/layout/LoadingComponent";
 import { User } from "../../app/models/user";
 import { useStore } from "../../app/stores/store";
 
 export default observer(function GameList() {
     const {gameStore, userStore} = useStore();
     const [games, setGames] = useState(gameStore.games);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        gameStore.loadGames();
+    }, []);
 
     useEffect(() => {
         setInterval(() => {
             gameStore.loadGames();
             setGames(gameStore.games);
+            setLoading(false);
         }, 4500);
     }, []);
 
     const handleConnect = (id: string, user: User) => {
         userStore.connectToGame(id, user);   
     }
+
+    if(loading) return <LoadingComponent content="Loading list of games..."/>
 
     return(
         <>

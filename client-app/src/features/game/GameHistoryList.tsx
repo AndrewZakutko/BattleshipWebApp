@@ -1,25 +1,35 @@
 import { observer } from "mobx-react-lite";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "semantic-ui-react";
 import LoadingComponent from "../../app/layout/LoadingComponent";
 import { useStore } from "../../app/stores/store";
 
 export default observer(function(){
     const { userStore, gameStore } = useStore();
+    const [historyGames, setHistoryGames] = useState(gameStore.historyGames);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         gameStore.loadHistoryGames(userStore.user!.name);
-    });
+    }, []);
 
-    if(gameStore.loadingInitial) return <LoadingComponent content="Loading history..."/>
+    useEffect(() => {
+        setInterval(() => {
+            gameStore.loadHistoryGames(userStore.user!.name);
+            setHistoryGames(gameStore.historyGames);
+            setLoading(false);
+        }, 4500);
+    }, []);
     
+    if(loading) return <LoadingComponent content="Loading history of games..."/>
+
     return(
         <Container>
-            {gameStore.historyGames != null ? 
+            {historyGames != null ? 
             (
                 <>
                     <ol className="bullet">
-                    {gameStore.historyGames!.map(game => (
+                    {historyGames!.map(game => (
                         <li key={game.id}>
                             <p>First player: {game.firstPlayerName}</p>
                             <p>Second player: {game.secondPlayerName}</p>
