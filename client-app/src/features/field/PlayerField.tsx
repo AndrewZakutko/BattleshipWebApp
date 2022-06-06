@@ -32,61 +32,61 @@ export default observer(function PlayerField(){
                                         id={cellStore.playerCells[0].id}
                                         x={cellStore.playerCells[0].x}
                                         y={cellStore.playerCells[0].y}
-                                        cellStatus={cellStore.playerCells[0].cellStatus} 
+                                        status={cellStore.playerCells[0].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[1].id}
                                         x={cellStore.playerCells[1].x}
                                         y={cellStore.playerCells[1].y}
-                                        cellStatus={cellStore.playerCells[1].cellStatus} 
+                                        status={cellStore.playerCells[1].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[2].id}
                                         x={cellStore.playerCells[2].x}
                                         y={cellStore.playerCells[2].y}
-                                        cellStatus={cellStore.playerCells[2].cellStatus} 
+                                        status={cellStore.playerCells[2].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[3].id}
                                         x={cellStore.playerCells[3].x}
                                         y={cellStore.playerCells[3].y}
-                                        cellStatus={cellStore.playerCells[3].cellStatus} 
+                                        status={cellStore.playerCells[3].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[4].id}
                                         x={cellStore.playerCells[4].x}
                                         y={cellStore.playerCells[4].y}
-                                        cellStatus={cellStore.playerCells[4].cellStatus} 
+                                        status={cellStore.playerCells[4].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[5].id}
                                         x={cellStore.playerCells[5].x}
                                         y={cellStore.playerCells[5].y}
-                                        cellStatus={cellStore.playerCells[5].cellStatus} 
+                                        status={cellStore.playerCells[5].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[6].id}
                                         x={cellStore.playerCells[6].x}
                                         y={cellStore.playerCells[6].y}
-                                        cellStatus={cellStore.playerCells[6].cellStatus} 
+                                        status={cellStore.playerCells[6].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[7].id}
                                         x={cellStore.playerCells[7].x}
                                         y={cellStore.playerCells[7].y}
-                                        cellStatus={cellStore.playerCells[7].cellStatus} 
+                                        status={cellStore.playerCells[7].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[8].id}
                                         x={cellStore.playerCells[8].x}
                                         y={cellStore.playerCells[8].y}
-                                        cellStatus={cellStore.playerCells[8].cellStatus} 
+                                        status={cellStore.playerCells[8].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[9].id}
                                         x={cellStore.playerCells[9].x}
                                         y={cellStore.playerCells[9].y}
-                                        cellStatus={cellStore.playerCells[9].cellStatus} 
+                                        status={cellStore.playerCells[9].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -95,61 +95,61 @@ export default observer(function PlayerField(){
                                         id={cellStore.playerCells[10].id}
                                         x={cellStore.playerCells[10].x}
                                         y={cellStore.playerCells[10].y}
-                                        cellStatus={cellStore.playerCells[10].cellStatus} 
+                                        status={cellStore.playerCells[10].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[11].id}
                                         x={cellStore.playerCells[11].x}
                                         y={cellStore.playerCells[11].y}
-                                        cellStatus={cellStore.playerCells[11].cellStatus} 
+                                        status={cellStore.playerCells[11].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[12].id}
                                         x={cellStore.playerCells[12].x}
                                         y={cellStore.playerCells[12].y}
-                                        cellStatus={cellStore.playerCells[12].cellStatus} 
+                                        status={cellStore.playerCells[12].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[13].id}
                                         x={cellStore.playerCells[13].x}
                                         y={cellStore.playerCells[13].y}
-                                        cellStatus={cellStore.playerCells[13].cellStatus} 
+                                        status={cellStore.playerCells[13].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[14].id}
                                         x={cellStore.playerCells[14].x}
                                         y={cellStore.playerCells[14].y}
-                                        cellStatus={cellStore.playerCells[14].cellStatus} 
+                                        status={cellStore.playerCells[14].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[15].id}
                                         x={cellStore.playerCells[15].x}
                                         y={cellStore.playerCells[15].y}
-                                        cellStatus={cellStore.playerCells[15].cellStatus} 
+                                        status={cellStore.playerCells[15].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[16].id}
                                         x={cellStore.playerCells[16].x}
                                         y={cellStore.playerCells[16].y}
-                                        cellStatus={cellStore.playerCells[16].cellStatus} 
+                                        status={cellStore.playerCells[16].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[17].id}
                                         x={cellStore.playerCells[17].x}
                                         y={cellStore.playerCells[17].y}
-                                        cellStatus={cellStore.playerCells[17].cellStatus} 
+                                        status={cellStore.playerCells[17].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[18].id}
                                         x={cellStore.playerCells[18].x}
                                         y={cellStore.playerCells[18].y}
-                                        cellStatus={cellStore.playerCells[18].cellStatus} 
+                                        status={cellStore.playerCells[18].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[19].id}
                                         x={cellStore.playerCells[19].x}
                                         y={cellStore.playerCells[19].y}
-                                        cellStatus={cellStore.playerCells[19].cellStatus} 
+                                        status={cellStore.playerCells[19].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -158,61 +158,61 @@ export default observer(function PlayerField(){
                                         id={cellStore.playerCells[20].id}
                                         x={cellStore.playerCells[20].x}
                                         y={cellStore.playerCells[20].y}
-                                        cellStatus={cellStore.playerCells[20].cellStatus} 
+                                        status={cellStore.playerCells[20].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[21].id}
                                         x={cellStore.playerCells[21].x}
                                         y={cellStore.playerCells[21].y}
-                                        cellStatus={cellStore.playerCells[21].cellStatus} 
+                                        status={cellStore.playerCells[21].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[22].id}
                                         x={cellStore.playerCells[22].x}
                                         y={cellStore.playerCells[22].y}
-                                        cellStatus={cellStore.playerCells[22].cellStatus} 
+                                        status={cellStore.playerCells[22].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[23].id}
                                         x={cellStore.playerCells[23].x}
                                         y={cellStore.playerCells[23].y}
-                                        cellStatus={cellStore.playerCells[23].cellStatus} 
+                                        status={cellStore.playerCells[23].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[24].id}
                                         x={cellStore.playerCells[24].x}
                                         y={cellStore.playerCells[24].y}
-                                        cellStatus={cellStore.playerCells[24].cellStatus} 
+                                        status={cellStore.playerCells[24].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[25].id}
                                         x={cellStore.playerCells[25].x}
                                         y={cellStore.playerCells[25].y}
-                                        cellStatus={cellStore.playerCells[25].cellStatus} 
+                                        status={cellStore.playerCells[25].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[26].id}
                                         x={cellStore.playerCells[26].x}
                                         y={cellStore.playerCells[26].y}
-                                        cellStatus={cellStore.playerCells[26].cellStatus} 
+                                        status={cellStore.playerCells[26].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[27].id}
                                         x={cellStore.playerCells[27].x}
                                         y={cellStore.playerCells[27].y}
-                                        cellStatus={cellStore.playerCells[27].cellStatus} 
+                                        status={cellStore.playerCells[27].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[28].id}
                                         x={cellStore.playerCells[28].x}
                                         y={cellStore.playerCells[28].y}
-                                        cellStatus={cellStore.playerCells[28].cellStatus} 
+                                        status={cellStore.playerCells[28].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[29].id}
                                         x={cellStore.playerCells[29].x}
                                         y={cellStore.playerCells[29].y}
-                                        cellStatus={cellStore.playerCells[29].cellStatus} 
+                                        status={cellStore.playerCells[29].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -221,61 +221,61 @@ export default observer(function PlayerField(){
                                         id={cellStore.playerCells[30].id}
                                         x={cellStore.playerCells[30].x}
                                         y={cellStore.playerCells[30].y}
-                                        cellStatus={cellStore.playerCells[30].cellStatus} 
+                                        status={cellStore.playerCells[30].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[31].id}
                                         x={cellStore.playerCells[31].x}
                                         y={cellStore.playerCells[31].y}
-                                        cellStatus={cellStore.playerCells[31].cellStatus} 
+                                        status={cellStore.playerCells[31].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[32].id}
                                         x={cellStore.playerCells[32].x}
                                         y={cellStore.playerCells[32].y}
-                                        cellStatus={cellStore.playerCells[32].cellStatus} 
+                                        status={cellStore.playerCells[32].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[33].id}
                                         x={cellStore.playerCells[33].x}
                                         y={cellStore.playerCells[33].y}
-                                        cellStatus={cellStore.playerCells[33].cellStatus} 
+                                        status={cellStore.playerCells[33].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[34].id}
                                         x={cellStore.playerCells[34].x}
                                         y={cellStore.playerCells[34].y}
-                                        cellStatus={cellStore.playerCells[34].cellStatus} 
+                                        status={cellStore.playerCells[34].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[35].id}
                                         x={cellStore.playerCells[35].x}
                                         y={cellStore.playerCells[35].y}
-                                        cellStatus={cellStore.playerCells[35].cellStatus} 
+                                        status={cellStore.playerCells[35].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[36].id}
                                         x={cellStore.playerCells[36].x}
                                         y={cellStore.playerCells[36].y}
-                                        cellStatus={cellStore.playerCells[36].cellStatus} 
+                                        status={cellStore.playerCells[36].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[37].id}
                                         x={cellStore.playerCells[37].x}
                                         y={cellStore.playerCells[37].y}
-                                        cellStatus={cellStore.playerCells[37].cellStatus} 
+                                        status={cellStore.playerCells[37].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[38].id}
                                         x={cellStore.playerCells[38].x}
                                         y={cellStore.playerCells[38].y}
-                                        cellStatus={cellStore.playerCells[38].cellStatus} 
+                                        status={cellStore.playerCells[38].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[39].id}
                                         x={cellStore.playerCells[39].x}
                                         y={cellStore.playerCells[39].y}
-                                        cellStatus={cellStore.playerCells[39].cellStatus} 
+                                        status={cellStore.playerCells[39].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -284,61 +284,61 @@ export default observer(function PlayerField(){
                                         id={cellStore.playerCells[40].id}
                                         x={cellStore.playerCells[40].x}
                                         y={cellStore.playerCells[40].y}
-                                        cellStatus={cellStore.playerCells[40].cellStatus} 
+                                        status={cellStore.playerCells[40].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[41].id}
                                         x={cellStore.playerCells[41].x}
                                         y={cellStore.playerCells[41].y}
-                                        cellStatus={cellStore.playerCells[41].cellStatus} 
+                                        status={cellStore.playerCells[41].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[42].id}
                                         x={cellStore.playerCells[42].x}
                                         y={cellStore.playerCells[42].y}
-                                        cellStatus={cellStore.playerCells[42].cellStatus} 
+                                        status={cellStore.playerCells[42].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[43].id}
                                         x={cellStore.playerCells[43].x}
                                         y={cellStore.playerCells[43].y}
-                                        cellStatus={cellStore.playerCells[43].cellStatus} 
+                                        status={cellStore.playerCells[43].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[44].id}
                                         x={cellStore.playerCells[44].x}
                                         y={cellStore.playerCells[44].y}
-                                        cellStatus={cellStore.playerCells[44].cellStatus} 
+                                        status={cellStore.playerCells[44].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[45].id}
                                         x={cellStore.playerCells[45].x}
                                         y={cellStore.playerCells[45].y}
-                                        cellStatus={cellStore.playerCells[45].cellStatus} 
+                                        status={cellStore.playerCells[45].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[46].id}
                                         x={cellStore.playerCells[46].x}
                                         y={cellStore.playerCells[46].y}
-                                        cellStatus={cellStore.playerCells[46].cellStatus} 
+                                        status={cellStore.playerCells[46].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[47].id}
                                         x={cellStore.playerCells[47].x}
                                         y={cellStore.playerCells[47].y}
-                                        cellStatus={cellStore.playerCells[47].cellStatus} 
+                                        status={cellStore.playerCells[47].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[48].id}
                                         x={cellStore.playerCells[48].x}
                                         y={cellStore.playerCells[48].y}
-                                        cellStatus={cellStore.playerCells[48].cellStatus} 
+                                        status={cellStore.playerCells[48].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[49].id}
                                         x={cellStore.playerCells[49].x}
                                         y={cellStore.playerCells[49].y}
-                                        cellStatus={cellStore.playerCells[49].cellStatus} 
+                                        status={cellStore.playerCells[49].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -347,61 +347,61 @@ export default observer(function PlayerField(){
                                         id={cellStore.playerCells[50].id}
                                         x={cellStore.playerCells[50].x}
                                         y={cellStore.playerCells[50].y}
-                                        cellStatus={cellStore.playerCells[50].cellStatus} 
+                                        status={cellStore.playerCells[50].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[51].id}
                                         x={cellStore.playerCells[51].x}
                                         y={cellStore.playerCells[51].y}
-                                        cellStatus={cellStore.playerCells[51].cellStatus} 
+                                        status={cellStore.playerCells[51].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[52].id}
                                         x={cellStore.playerCells[52].x}
                                         y={cellStore.playerCells[52].y}
-                                        cellStatus={cellStore.playerCells[52].cellStatus} 
+                                        status={cellStore.playerCells[52].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[53].id}
                                         x={cellStore.playerCells[53].x}
                                         y={cellStore.playerCells[53].y}
-                                        cellStatus={cellStore.playerCells[53].cellStatus} 
+                                        status={cellStore.playerCells[53].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[54].id}
                                         x={cellStore.playerCells[54].x}
                                         y={cellStore.playerCells[54].y}
-                                        cellStatus={cellStore.playerCells[54].cellStatus} 
+                                        status={cellStore.playerCells[54].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[55].id}
                                         x={cellStore.playerCells[55].x}
                                         y={cellStore.playerCells[55].y}
-                                        cellStatus={cellStore.playerCells[55].cellStatus} 
+                                        status={cellStore.playerCells[55].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[56].id}
                                         x={cellStore.playerCells[56].x}
                                         y={cellStore.playerCells[56].y}
-                                        cellStatus={cellStore.playerCells[56].cellStatus} 
+                                        status={cellStore.playerCells[56].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[57].id}
                                         x={cellStore.playerCells[57].x}
                                         y={cellStore.playerCells[57].y}
-                                        cellStatus={cellStore.playerCells[57].cellStatus} 
+                                        status={cellStore.playerCells[57].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[58].id}
                                         x={cellStore.playerCells[58].x}
                                         y={cellStore.playerCells[58].y}
-                                        cellStatus={cellStore.playerCells[58].cellStatus} 
+                                        status={cellStore.playerCells[58].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[59].id}
                                         x={cellStore.playerCells[59].x}
                                         y={cellStore.playerCells[59].y}
-                                        cellStatus={cellStore.playerCells[59].cellStatus} 
+                                        status={cellStore.playerCells[59].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -410,61 +410,61 @@ export default observer(function PlayerField(){
                                         id={cellStore.playerCells[60].id}
                                         x={cellStore.playerCells[60].x}
                                         y={cellStore.playerCells[60].y}
-                                        cellStatus={cellStore.playerCells[60].cellStatus} 
+                                        status={cellStore.playerCells[60].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[61].id}
                                         x={cellStore.playerCells[61].x}
                                         y={cellStore.playerCells[61].y}
-                                        cellStatus={cellStore.playerCells[61].cellStatus} 
+                                        status={cellStore.playerCells[61].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[62].id}
                                         x={cellStore.playerCells[62].x}
                                         y={cellStore.playerCells[62].y}
-                                        cellStatus={cellStore.playerCells[62].cellStatus} 
+                                        status={cellStore.playerCells[62].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[63].id}
                                         x={cellStore.playerCells[63].x}
                                         y={cellStore.playerCells[63].y}
-                                        cellStatus={cellStore.playerCells[63].cellStatus} 
+                                        status={cellStore.playerCells[63].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[64].id}
                                         x={cellStore.playerCells[64].x}
                                         y={cellStore.playerCells[64].y}
-                                        cellStatus={cellStore.playerCells[64].cellStatus} 
+                                        status={cellStore.playerCells[64].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[65].id}
                                         x={cellStore.playerCells[65].x}
                                         y={cellStore.playerCells[65].y}
-                                        cellStatus={cellStore.playerCells[65].cellStatus} 
+                                        status={cellStore.playerCells[65].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[66].id}
                                         x={cellStore.playerCells[66].x}
                                         y={cellStore.playerCells[66].y}
-                                        cellStatus={cellStore.playerCells[66].cellStatus} 
+                                        status={cellStore.playerCells[66].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[67].id}
                                         x={cellStore.playerCells[67].x}
                                         y={cellStore.playerCells[67].y}
-                                        cellStatus={cellStore.playerCells[67].cellStatus} 
+                                        status={cellStore.playerCells[67].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[68].id}
                                         x={cellStore.playerCells[68].x}
                                         y={cellStore.playerCells[68].y}
-                                        cellStatus={cellStore.playerCells[68].cellStatus} 
+                                        status={cellStore.playerCells[68].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[69].id}
                                         x={cellStore.playerCells[69].x}
                                         y={cellStore.playerCells[69].y}
-                                        cellStatus={cellStore.playerCells[69].cellStatus} 
+                                        status={cellStore.playerCells[69].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -473,61 +473,61 @@ export default observer(function PlayerField(){
                                         id={cellStore.playerCells[70].id}
                                         x={cellStore.playerCells[70].x}
                                         y={cellStore.playerCells[70].y}
-                                        cellStatus={cellStore.playerCells[70].cellStatus} 
+                                        status={cellStore.playerCells[70].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[71].id}
                                         x={cellStore.playerCells[71].x}
                                         y={cellStore.playerCells[71].y}
-                                        cellStatus={cellStore.playerCells[71].cellStatus} 
+                                        status={cellStore.playerCells[71].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[72].id}
                                         x={cellStore.playerCells[72].x}
                                         y={cellStore.playerCells[72].y}
-                                        cellStatus={cellStore.playerCells[72].cellStatus} 
+                                        status={cellStore.playerCells[72].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[73].id}
                                         x={cellStore.playerCells[73].x}
                                         y={cellStore.playerCells[73].y}
-                                        cellStatus={cellStore.playerCells[73].cellStatus} 
+                                        status={cellStore.playerCells[73].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[74].id}
                                         x={cellStore.playerCells[74].x}
                                         y={cellStore.playerCells[74].y}
-                                        cellStatus={cellStore.playerCells[74].cellStatus} 
+                                        status={cellStore.playerCells[74].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[75].id}
                                         x={cellStore.playerCells[75].x}
                                         y={cellStore.playerCells[75].y}
-                                        cellStatus={cellStore.playerCells[75].cellStatus} 
+                                        status={cellStore.playerCells[75].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[76].id}
                                         x={cellStore.playerCells[76].x}
                                         y={cellStore.playerCells[76].y}
-                                        cellStatus={cellStore.playerCells[76].cellStatus} 
+                                        status={cellStore.playerCells[76].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[77].id}
                                         x={cellStore.playerCells[77].x}
                                         y={cellStore.playerCells[77].y}
-                                        cellStatus={cellStore.playerCells[77].cellStatus} 
+                                        status={cellStore.playerCells[77].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[78].id}
                                         x={cellStore.playerCells[78].x}
                                         y={cellStore.playerCells[78].y}
-                                        cellStatus={cellStore.playerCells[78].cellStatus} 
+                                        status={cellStore.playerCells[78].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[79].id}
                                         x={cellStore.playerCells[79].x}
                                         y={cellStore.playerCells[79].y}
-                                        cellStatus={cellStore.playerCells[79].cellStatus} 
+                                        status={cellStore.playerCells[79].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -536,61 +536,61 @@ export default observer(function PlayerField(){
                                         id={cellStore.playerCells[80].id}
                                         x={cellStore.playerCells[80].x}
                                         y={cellStore.playerCells[80].y}
-                                        cellStatus={cellStore.playerCells[80].cellStatus} 
+                                        status={cellStore.playerCells[80].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[81].id}
                                         x={cellStore.playerCells[81].x}
                                         y={cellStore.playerCells[81].y}
-                                        cellStatus={cellStore.playerCells[81].cellStatus} 
+                                        status={cellStore.playerCells[81].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[82].id}
                                         x={cellStore.playerCells[82].x}
                                         y={cellStore.playerCells[82].y}
-                                        cellStatus={cellStore.playerCells[82].cellStatus} 
+                                        status={cellStore.playerCells[82].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[83].id}
                                         x={cellStore.playerCells[83].x}
                                         y={cellStore.playerCells[83].y}
-                                        cellStatus={cellStore.playerCells[83].cellStatus} 
+                                        status={cellStore.playerCells[83].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[84].id}
                                         x={cellStore.playerCells[84].x}
                                         y={cellStore.playerCells[84].y}
-                                        cellStatus={cellStore.playerCells[84].cellStatus} 
+                                        status={cellStore.playerCells[84].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[85].id}
                                         x={cellStore.playerCells[85].x}
                                         y={cellStore.playerCells[85].y}
-                                        cellStatus={cellStore.playerCells[85].cellStatus} 
+                                        status={cellStore.playerCells[85].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[86].id}
                                         x={cellStore.playerCells[86].x}
                                         y={cellStore.playerCells[86].y}
-                                        cellStatus={cellStore.playerCells[86].cellStatus} 
+                                        status={cellStore.playerCells[86].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[87].id}
                                         x={cellStore.playerCells[87].x}
                                         y={cellStore.playerCells[87].y}
-                                        cellStatus={cellStore.playerCells[87].cellStatus} 
+                                        status={cellStore.playerCells[87].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[88].id}
                                         x={cellStore.playerCells[88].x}
                                         y={cellStore.playerCells[88].y}
-                                        cellStatus={cellStore.playerCells[88].cellStatus} 
+                                        status={cellStore.playerCells[88].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[89].id}
                                         x={cellStore.playerCells[89].x}
                                         y={cellStore.playerCells[89].y}
-                                        cellStatus={cellStore.playerCells[89].cellStatus} 
+                                        status={cellStore.playerCells[89].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -599,61 +599,61 @@ export default observer(function PlayerField(){
                                         id={cellStore.playerCells[90].id}
                                         x={cellStore.playerCells[90].x}
                                         y={cellStore.playerCells[90].y}
-                                        cellStatus={cellStore.playerCells[90].cellStatus} 
+                                        status={cellStore.playerCells[90].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[91].id}
                                         x={cellStore.playerCells[91].x}
                                         y={cellStore.playerCells[91].y}
-                                        cellStatus={cellStore.playerCells[91].cellStatus} 
+                                        status={cellStore.playerCells[91].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[92].id}
                                         x={cellStore.playerCells[92].x}
                                         y={cellStore.playerCells[92].y}
-                                        cellStatus={cellStore.playerCells[92].cellStatus} 
+                                        status={cellStore.playerCells[92].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[93].id}
                                         x={cellStore.playerCells[93].x}
                                         y={cellStore.playerCells[93].y}
-                                        cellStatus={cellStore.playerCells[93].cellStatus} 
+                                        status={cellStore.playerCells[93].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[94].id}
                                         x={cellStore.playerCells[94].x}
                                         y={cellStore.playerCells[94].y}
-                                        cellStatus={cellStore.playerCells[94].cellStatus} 
+                                        status={cellStore.playerCells[94].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[95].id}
                                         x={cellStore.playerCells[95].x}
                                         y={cellStore.playerCells[95].y}
-                                        cellStatus={cellStore.playerCells[95].cellStatus} 
+                                        status={cellStore.playerCells[95].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[96].id}
                                         x={cellStore.playerCells[96].x}
                                         y={cellStore.playerCells[96].y}
-                                        cellStatus={cellStore.playerCells[96].cellStatus} 
+                                        status={cellStore.playerCells[96].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[97].id}
                                         x={cellStore.playerCells[97].x}
                                         y={cellStore.playerCells[97].y}
-                                        cellStatus={cellStore.playerCells[97].cellStatus} 
+                                        status={cellStore.playerCells[97].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[98].id}
                                         x={cellStore.playerCells[98].x}
                                         y={cellStore.playerCells[98].y}
-                                        cellStatus={cellStore.playerCells[98].cellStatus} 
+                                        status={cellStore.playerCells[98].status} 
                                     />
                                     <FirstPlayerCell
                                         id={cellStore.playerCells[99].id}
                                         x={cellStore.playerCells[99].x}
                                         y={cellStore.playerCells[99].y}
-                                        cellStatus={cellStore.playerCells[99].cellStatus} 
+                                        status={cellStore.playerCells[99].status} 
                                     />
                                 </tr>
                             </>

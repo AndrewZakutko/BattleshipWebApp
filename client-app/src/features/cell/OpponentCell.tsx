@@ -5,13 +5,13 @@ interface Props {
     id: string | null;
     x: number;
     y: number;
-    cellStatus: string;
+    status: string;
 }
 
 export default observer(function OpponentCell(props: Props){
     return(
         <>
-            {props.cellStatus == "None" ? 
+            {props.status == "None" ? 
             (
                 <th key={props.id}></th>
             )
@@ -19,7 +19,7 @@ export default observer(function OpponentCell(props: Props){
             (
                 null
             )}
-            {props.cellStatus == "Busy" ? 
+            {props.status == "Busy" ? 
             (
                 <th key={props.id}></th>
             )
@@ -27,7 +27,7 @@ export default observer(function OpponentCell(props: Props){
             (
                 null
             )}
-            {props.cellStatus == "Forbidden" ? 
+            {props.status == "Forbidden" ? 
             (
                 <th key={props.id}></th>
             )
@@ -35,7 +35,7 @@ export default observer(function OpponentCell(props: Props){
             (
                 null
             )}
-            {props.cellStatus == "ShootWithoutHit" ? 
+            {props.status == "ShootWithoutHit" ? 
             (
                 <th style={{background: "red"}} key={props.id}></th>
             )
@@ -43,7 +43,7 @@ export default observer(function OpponentCell(props: Props){
             (
                 null
             )}
-            {props.cellStatus == "Destroyed" ? 
+            {props.status == "Destroyed" ? 
             (
                 <th style={{background: "blue"}} key={props.id}></th>
             )

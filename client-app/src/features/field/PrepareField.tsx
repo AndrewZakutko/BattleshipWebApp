@@ -32,61 +32,61 @@ export default observer(function PrepareField() {
                                         id={cellStore.cells[0].id}
                                         x={cellStore.cells[0].x}
                                         y={cellStore.cells[0].y}
-                                        cellStatus={cellStore.cells[0].cellStatus} 
+                                        status={cellStore.cells[0].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[1].id}
                                         x={cellStore.cells[1].x}
                                         y={cellStore.cells[1].y}
-                                        cellStatus={cellStore.cells[1].cellStatus} 
+                                        status={cellStore.cells[1].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[2].id}
                                         x={cellStore.cells[2].x}
                                         y={cellStore.cells[2].y}
-                                        cellStatus={cellStore.cells[2].cellStatus} 
+                                        status={cellStore.cells[2].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[3].id}
                                         x={cellStore.cells[3].x}
                                         y={cellStore.cells[3].y}
-                                        cellStatus={cellStore.cells[3].cellStatus} 
+                                        status={cellStore.cells[3].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[4].id}
                                         x={cellStore.cells[4].x}
                                         y={cellStore.cells[4].y}
-                                        cellStatus={cellStore.cells[4].cellStatus} 
+                                        status={cellStore.cells[4].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[5].id}
                                         x={cellStore.cells[5].x}
                                         y={cellStore.cells[5].y}
-                                        cellStatus={cellStore.cells[5].cellStatus} 
+                                        status={cellStore.cells[5].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[6].id}
                                         x={cellStore.cells[6].x}
                                         y={cellStore.cells[6].y}
-                                        cellStatus={cellStore.cells[6].cellStatus} 
+                                        status={cellStore.cells[6].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[7].id}
                                         x={cellStore.cells[7].x}
                                         y={cellStore.cells[7].y}
-                                        cellStatus={cellStore.cells[7].cellStatus} 
+                                        status={cellStore.cells[7].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[8].id}
                                         x={cellStore.cells[8].x}
                                         y={cellStore.cells[8].y}
-                                        cellStatus={cellStore.cells[8].cellStatus} 
+                                        status={cellStore.cells[8].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[9].id}
                                         x={cellStore.cells[9].x}
                                         y={cellStore.cells[9].y}
-                                        cellStatus={cellStore.cells[9].cellStatus} 
+                                        status={cellStore.cells[9].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -95,61 +95,61 @@ export default observer(function PrepareField() {
                                         id={cellStore.cells[10].id}
                                         x={cellStore.cells[10].x}
                                         y={cellStore.cells[10].y}
-                                        cellStatus={cellStore.cells[10].cellStatus} 
+                                        status={cellStore.cells[10].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[11].id}
                                         x={cellStore.cells[11].x}
                                         y={cellStore.cells[11].y}
-                                        cellStatus={cellStore.cells[11].cellStatus} 
+                                        status={cellStore.cells[11].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[12].id}
                                         x={cellStore.cells[12].x}
                                         y={cellStore.cells[12].y}
-                                        cellStatus={cellStore.cells[12].cellStatus} 
+                                        status={cellStore.cells[12].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[13].id}
                                         x={cellStore.cells[13].x}
                                         y={cellStore.cells[13].y}
-                                        cellStatus={cellStore.cells[13].cellStatus} 
+                                        status={cellStore.cells[13].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[14].id}
                                         x={cellStore.cells[14].x}
                                         y={cellStore.cells[14].y}
-                                        cellStatus={cellStore.cells[14].cellStatus} 
+                                        status={cellStore.cells[14].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[15].id}
                                         x={cellStore.cells[15].x}
                                         y={cellStore.cells[15].y}
-                                        cellStatus={cellStore.cells[15].cellStatus} 
+                                        status={cellStore.cells[15].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[16].id}
                                         x={cellStore.cells[16].x}
                                         y={cellStore.cells[16].y}
-                                        cellStatus={cellStore.cells[16].cellStatus} 
+                                        status={cellStore.cells[16].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[17].id}
                                         x={cellStore.cells[17].x}
                                         y={cellStore.cells[17].y}
-                                        cellStatus={cellStore.cells[17].cellStatus} 
+                                        status={cellStore.cells[17].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[18].id}
                                         x={cellStore.cells[18].x}
                                         y={cellStore.cells[18].y}
-                                        cellStatus={cellStore.cells[18].cellStatus} 
+                                        status={cellStore.cells[18].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[19].id}
                                         x={cellStore.cells[19].x}
                                         y={cellStore.cells[19].y}
-                                        cellStatus={cellStore.cells[19].cellStatus} 
+                                        status={cellStore.cells[19].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -158,61 +158,61 @@ export default observer(function PrepareField() {
                                         id={cellStore.cells[20].id}
                                         x={cellStore.cells[20].x}
                                         y={cellStore.cells[20].y}
-                                        cellStatus={cellStore.cells[20].cellStatus} 
+                                        status={cellStore.cells[20].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[21].id}
                                         x={cellStore.cells[21].x}
                                         y={cellStore.cells[21].y}
-                                        cellStatus={cellStore.cells[21].cellStatus} 
+                                        status={cellStore.cells[21].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[22].id}
                                         x={cellStore.cells[22].x}
                                         y={cellStore.cells[22].y}
-                                        cellStatus={cellStore.cells[22].cellStatus} 
+                                        status={cellStore.cells[22].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[23].id}
                                         x={cellStore.cells[23].x}
                                         y={cellStore.cells[23].y}
-                                        cellStatus={cellStore.cells[23].cellStatus} 
+                                        status={cellStore.cells[23].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[24].id}
                                         x={cellStore.cells[24].x}
                                         y={cellStore.cells[24].y}
-                                        cellStatus={cellStore.cells[24].cellStatus} 
+                                        status={cellStore.cells[24].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[25].id}
                                         x={cellStore.cells[25].x}
                                         y={cellStore.cells[25].y}
-                                        cellStatus={cellStore.cells[25].cellStatus} 
+                                        status={cellStore.cells[25].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[26].id}
                                         x={cellStore.cells[26].x}
                                         y={cellStore.cells[26].y}
-                                        cellStatus={cellStore.cells[26].cellStatus} 
+                                        status={cellStore.cells[26].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[27].id}
                                         x={cellStore.cells[27].x}
                                         y={cellStore.cells[27].y}
-                                        cellStatus={cellStore.cells[27].cellStatus} 
+                                        status={cellStore.cells[27].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[28].id}
                                         x={cellStore.cells[28].x}
                                         y={cellStore.cells[28].y}
-                                        cellStatus={cellStore.cells[28].cellStatus} 
+                                        status={cellStore.cells[28].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[29].id}
                                         x={cellStore.cells[29].x}
                                         y={cellStore.cells[29].y}
-                                        cellStatus={cellStore.cells[29].cellStatus} 
+                                        status={cellStore.cells[29].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -221,61 +221,61 @@ export default observer(function PrepareField() {
                                         id={cellStore.cells[30].id}
                                         x={cellStore.cells[30].x}
                                         y={cellStore.cells[30].y}
-                                        cellStatus={cellStore.cells[30].cellStatus} 
+                                        status={cellStore.cells[30].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[31].id}
                                         x={cellStore.cells[31].x}
                                         y={cellStore.cells[31].y}
-                                        cellStatus={cellStore.cells[31].cellStatus} 
+                                        status={cellStore.cells[31].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[32].id}
                                         x={cellStore.cells[32].x}
                                         y={cellStore.cells[32].y}
-                                        cellStatus={cellStore.cells[32].cellStatus} 
+                                        status={cellStore.cells[32].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[33].id}
                                         x={cellStore.cells[33].x}
                                         y={cellStore.cells[33].y}
-                                        cellStatus={cellStore.cells[33].cellStatus} 
+                                        status={cellStore.cells[33].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[34].id}
                                         x={cellStore.cells[34].x}
                                         y={cellStore.cells[34].y}
-                                        cellStatus={cellStore.cells[34].cellStatus} 
+                                        status={cellStore.cells[34].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[35].id}
                                         x={cellStore.cells[35].x}
                                         y={cellStore.cells[35].y}
-                                        cellStatus={cellStore.cells[35].cellStatus} 
+                                        status={cellStore.cells[35].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[36].id}
                                         x={cellStore.cells[36].x}
                                         y={cellStore.cells[36].y}
-                                        cellStatus={cellStore.cells[36].cellStatus} 
+                                        status={cellStore.cells[36].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[37].id}
                                         x={cellStore.cells[37].x}
                                         y={cellStore.cells[37].y}
-                                        cellStatus={cellStore.cells[37].cellStatus} 
+                                        status={cellStore.cells[37].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[38].id}
                                         x={cellStore.cells[38].x}
                                         y={cellStore.cells[38].y}
-                                        cellStatus={cellStore.cells[38].cellStatus} 
+                                        status={cellStore.cells[38].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[39].id}
                                         x={cellStore.cells[39].x}
                                         y={cellStore.cells[39].y}
-                                        cellStatus={cellStore.cells[39].cellStatus} 
+                                        status={cellStore.cells[39].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -284,61 +284,61 @@ export default observer(function PrepareField() {
                                         id={cellStore.cells[40].id}
                                         x={cellStore.cells[40].x}
                                         y={cellStore.cells[40].y}
-                                        cellStatus={cellStore.cells[40].cellStatus} 
+                                        status={cellStore.cells[40].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[41].id}
                                         x={cellStore.cells[41].x}
                                         y={cellStore.cells[41].y}
-                                        cellStatus={cellStore.cells[41].cellStatus} 
+                                        status={cellStore.cells[41].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[42].id}
                                         x={cellStore.cells[42].x}
                                         y={cellStore.cells[42].y}
-                                        cellStatus={cellStore.cells[42].cellStatus} 
+                                        status={cellStore.cells[42].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[43].id}
                                         x={cellStore.cells[43].x}
                                         y={cellStore.cells[43].y}
-                                        cellStatus={cellStore.cells[43].cellStatus} 
+                                        status={cellStore.cells[43].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[44].id}
                                         x={cellStore.cells[44].x}
                                         y={cellStore.cells[44].y}
-                                        cellStatus={cellStore.cells[44].cellStatus} 
+                                        status={cellStore.cells[44].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[45].id}
                                         x={cellStore.cells[45].x}
                                         y={cellStore.cells[45].y}
-                                        cellStatus={cellStore.cells[45].cellStatus} 
+                                        status={cellStore.cells[45].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[46].id}
                                         x={cellStore.cells[46].x}
                                         y={cellStore.cells[46].y}
-                                        cellStatus={cellStore.cells[46].cellStatus} 
+                                        status={cellStore.cells[46].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[47].id}
                                         x={cellStore.cells[47].x}
                                         y={cellStore.cells[47].y}
-                                        cellStatus={cellStore.cells[47].cellStatus} 
+                                        status={cellStore.cells[47].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[48].id}
                                         x={cellStore.cells[48].x}
                                         y={cellStore.cells[48].y}
-                                        cellStatus={cellStore.cells[48].cellStatus} 
+                                        status={cellStore.cells[48].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[49].id}
                                         x={cellStore.cells[49].x}
                                         y={cellStore.cells[49].y}
-                                        cellStatus={cellStore.cells[49].cellStatus} 
+                                        status={cellStore.cells[49].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -347,61 +347,61 @@ export default observer(function PrepareField() {
                                         id={cellStore.cells[50].id}
                                         x={cellStore.cells[50].x}
                                         y={cellStore.cells[50].y}
-                                        cellStatus={cellStore.cells[50].cellStatus} 
+                                        status={cellStore.cells[50].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[51].id}
                                         x={cellStore.cells[51].x}
                                         y={cellStore.cells[51].y}
-                                        cellStatus={cellStore.cells[51].cellStatus} 
+                                        status={cellStore.cells[51].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[52].id}
                                         x={cellStore.cells[52].x}
                                         y={cellStore.cells[52].y}
-                                        cellStatus={cellStore.cells[52].cellStatus} 
+                                        status={cellStore.cells[52].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[53].id}
                                         x={cellStore.cells[53].x}
                                         y={cellStore.cells[53].y}
-                                        cellStatus={cellStore.cells[53].cellStatus} 
+                                        status={cellStore.cells[53].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[54].id}
                                         x={cellStore.cells[54].x}
                                         y={cellStore.cells[54].y}
-                                        cellStatus={cellStore.cells[54].cellStatus} 
+                                        status={cellStore.cells[54].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[55].id}
                                         x={cellStore.cells[55].x}
                                         y={cellStore.cells[55].y}
-                                        cellStatus={cellStore.cells[55].cellStatus} 
+                                        status={cellStore.cells[55].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[56].id}
                                         x={cellStore.cells[56].x}
                                         y={cellStore.cells[56].y}
-                                        cellStatus={cellStore.cells[56].cellStatus} 
+                                        status={cellStore.cells[56].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[57].id}
                                         x={cellStore.cells[57].x}
                                         y={cellStore.cells[57].y}
-                                        cellStatus={cellStore.cells[57].cellStatus} 
+                                        status={cellStore.cells[57].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[58].id}
                                         x={cellStore.cells[58].x}
                                         y={cellStore.cells[58].y}
-                                        cellStatus={cellStore.cells[58].cellStatus} 
+                                        status={cellStore.cells[58].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[59].id}
                                         x={cellStore.cells[59].x}
                                         y={cellStore.cells[59].y}
-                                        cellStatus={cellStore.cells[59].cellStatus} 
+                                        status={cellStore.cells[59].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -410,61 +410,61 @@ export default observer(function PrepareField() {
                                         id={cellStore.cells[60].id}
                                         x={cellStore.cells[60].x}
                                         y={cellStore.cells[60].y}
-                                        cellStatus={cellStore.cells[60].cellStatus} 
+                                        status={cellStore.cells[60].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[61].id}
                                         x={cellStore.cells[61].x}
                                         y={cellStore.cells[61].y}
-                                        cellStatus={cellStore.cells[61].cellStatus} 
+                                        status={cellStore.cells[61].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[62].id}
                                         x={cellStore.cells[62].x}
                                         y={cellStore.cells[62].y}
-                                        cellStatus={cellStore.cells[62].cellStatus} 
+                                        status={cellStore.cells[62].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[63].id}
                                         x={cellStore.cells[63].x}
                                         y={cellStore.cells[63].y}
-                                        cellStatus={cellStore.cells[63].cellStatus} 
+                                        status={cellStore.cells[63].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[64].id}
                                         x={cellStore.cells[64].x}
                                         y={cellStore.cells[64].y}
-                                        cellStatus={cellStore.cells[64].cellStatus} 
+                                        status={cellStore.cells[64].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[65].id}
                                         x={cellStore.cells[65].x}
                                         y={cellStore.cells[65].y}
-                                        cellStatus={cellStore.cells[65].cellStatus} 
+                                        status={cellStore.cells[65].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[66].id}
                                         x={cellStore.cells[66].x}
                                         y={cellStore.cells[66].y}
-                                        cellStatus={cellStore.cells[66].cellStatus} 
+                                        status={cellStore.cells[66].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[67].id}
                                         x={cellStore.cells[67].x}
                                         y={cellStore.cells[67].y}
-                                        cellStatus={cellStore.cells[67].cellStatus} 
+                                        status={cellStore.cells[67].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[68].id}
                                         x={cellStore.cells[68].x}
                                         y={cellStore.cells[68].y}
-                                        cellStatus={cellStore.cells[68].cellStatus} 
+                                        status={cellStore.cells[68].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[69].id}
                                         x={cellStore.cells[69].x}
                                         y={cellStore.cells[69].y}
-                                        cellStatus={cellStore.cells[69].cellStatus} 
+                                        status={cellStore.cells[69].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -473,61 +473,61 @@ export default observer(function PrepareField() {
                                         id={cellStore.cells[70].id}
                                         x={cellStore.cells[70].x}
                                         y={cellStore.cells[70].y}
-                                        cellStatus={cellStore.cells[70].cellStatus} 
+                                        status={cellStore.cells[70].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[71].id}
                                         x={cellStore.cells[71].x}
                                         y={cellStore.cells[71].y}
-                                        cellStatus={cellStore.cells[71].cellStatus} 
+                                        status={cellStore.cells[71].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[72].id}
                                         x={cellStore.cells[72].x}
                                         y={cellStore.cells[72].y}
-                                        cellStatus={cellStore.cells[72].cellStatus} 
+                                        status={cellStore.cells[72].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[73].id}
                                         x={cellStore.cells[73].x}
                                         y={cellStore.cells[73].y}
-                                        cellStatus={cellStore.cells[73].cellStatus} 
+                                        status={cellStore.cells[73].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[74].id}
                                         x={cellStore.cells[74].x}
                                         y={cellStore.cells[74].y}
-                                        cellStatus={cellStore.cells[74].cellStatus} 
+                                        status={cellStore.cells[74].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[75].id}
                                         x={cellStore.cells[75].x}
                                         y={cellStore.cells[75].y}
-                                        cellStatus={cellStore.cells[75].cellStatus} 
+                                        status={cellStore.cells[75].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[76].id}
                                         x={cellStore.cells[76].x}
                                         y={cellStore.cells[76].y}
-                                        cellStatus={cellStore.cells[76].cellStatus} 
+                                        status={cellStore.cells[76].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[77].id}
                                         x={cellStore.cells[77].x}
                                         y={cellStore.cells[77].y}
-                                        cellStatus={cellStore.cells[77].cellStatus} 
+                                        status={cellStore.cells[77].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[78].id}
                                         x={cellStore.cells[78].x}
                                         y={cellStore.cells[78].y}
-                                        cellStatus={cellStore.cells[78].cellStatus} 
+                                        status={cellStore.cells[78].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[79].id}
                                         x={cellStore.cells[79].x}
                                         y={cellStore.cells[79].y}
-                                        cellStatus={cellStore.cells[79].cellStatus} 
+                                        status={cellStore.cells[79].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -536,61 +536,61 @@ export default observer(function PrepareField() {
                                         id={cellStore.cells[80].id}
                                         x={cellStore.cells[80].x}
                                         y={cellStore.cells[80].y}
-                                        cellStatus={cellStore.cells[80].cellStatus} 
+                                        status={cellStore.cells[80].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[81].id}
                                         x={cellStore.cells[81].x}
                                         y={cellStore.cells[81].y}
-                                        cellStatus={cellStore.cells[81].cellStatus} 
+                                        status={cellStore.cells[81].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[82].id}
                                         x={cellStore.cells[82].x}
                                         y={cellStore.cells[82].y}
-                                        cellStatus={cellStore.cells[82].cellStatus} 
+                                        status={cellStore.cells[82].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[83].id}
                                         x={cellStore.cells[83].x}
                                         y={cellStore.cells[83].y}
-                                        cellStatus={cellStore.cells[83].cellStatus} 
+                                        status={cellStore.cells[83].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[84].id}
                                         x={cellStore.cells[84].x}
                                         y={cellStore.cells[84].y}
-                                        cellStatus={cellStore.cells[84].cellStatus} 
+                                        status={cellStore.cells[84].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[85].id}
                                         x={cellStore.cells[85].x}
                                         y={cellStore.cells[85].y}
-                                        cellStatus={cellStore.cells[85].cellStatus} 
+                                        status={cellStore.cells[85].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[86].id}
                                         x={cellStore.cells[86].x}
                                         y={cellStore.cells[86].y}
-                                        cellStatus={cellStore.cells[86].cellStatus} 
+                                        status={cellStore.cells[86].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[87].id}
                                         x={cellStore.cells[87].x}
                                         y={cellStore.cells[87].y}
-                                        cellStatus={cellStore.cells[87].cellStatus} 
+                                        status={cellStore.cells[87].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[88].id}
                                         x={cellStore.cells[88].x}
                                         y={cellStore.cells[88].y}
-                                        cellStatus={cellStore.cells[88].cellStatus} 
+                                        status={cellStore.cells[88].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[89].id}
                                         x={cellStore.cells[89].x}
                                         y={cellStore.cells[89].y}
-                                        cellStatus={cellStore.cells[89].cellStatus} 
+                                        status={cellStore.cells[89].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -599,61 +599,61 @@ export default observer(function PrepareField() {
                                         id={cellStore.cells[90].id}
                                         x={cellStore.cells[90].x}
                                         y={cellStore.cells[90].y}
-                                        cellStatus={cellStore.cells[90].cellStatus} 
+                                        status={cellStore.cells[90].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[91].id}
                                         x={cellStore.cells[91].x}
                                         y={cellStore.cells[91].y}
-                                        cellStatus={cellStore.cells[91].cellStatus} 
+                                        status={cellStore.cells[91].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[92].id}
                                         x={cellStore.cells[92].x}
                                         y={cellStore.cells[92].y}
-                                        cellStatus={cellStore.cells[92].cellStatus} 
+                                        status={cellStore.cells[92].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[93].id}
                                         x={cellStore.cells[93].x}
                                         y={cellStore.cells[93].y}
-                                        cellStatus={cellStore.cells[93].cellStatus} 
+                                        status={cellStore.cells[93].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[94].id}
                                         x={cellStore.cells[94].x}
                                         y={cellStore.cells[94].y}
-                                        cellStatus={cellStore.cells[94].cellStatus} 
+                                        status={cellStore.cells[94].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[95].id}
                                         x={cellStore.cells[95].x}
                                         y={cellStore.cells[95].y}
-                                        cellStatus={cellStore.cells[95].cellStatus} 
+                                        status={cellStore.cells[95].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[96].id}
                                         x={cellStore.cells[96].x}
                                         y={cellStore.cells[96].y}
-                                        cellStatus={cellStore.cells[96].cellStatus} 
+                                        status={cellStore.cells[96].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[97].id}
                                         x={cellStore.cells[97].x}
                                         y={cellStore.cells[97].y}
-                                        cellStatus={cellStore.cells[97].cellStatus} 
+                                        status={cellStore.cells[97].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[98].id}
                                         x={cellStore.cells[98].x}
                                         y={cellStore.cells[98].y}
-                                        cellStatus={cellStore.cells[98].cellStatus} 
+                                        status={cellStore.cells[98].status} 
                                     />
                                     <Cell
                                         id={cellStore.cells[99].id}
                                         x={cellStore.cells[99].x}
                                         y={cellStore.cells[99].y}
-                                        cellStatus={cellStore.cells[99].cellStatus} 
+                                        status={cellStore.cells[99].status} 
                                     />
                                 </tr>
                             </>

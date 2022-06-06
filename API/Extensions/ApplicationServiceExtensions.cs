@@ -1,5 +1,5 @@
 using Application.Core;
-using Application.Handlers.GameHandlers;
+using Application.Handlers.Games;
 using Application.Managers;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

@@ -15,7 +15,7 @@ export default class CellStore {
 
     loadCells = async (id: string) => {
         try {
-            this.cells = await agent.Cells.getCells(id);
+            this.cells = await agent.Cells.list(id);
         } catch(error) {
             console.log(error);
         }
@@ -23,7 +23,7 @@ export default class CellStore {
 
     loadPlayerCells = async (id: string) => {
         try {
-            this.playerCells = await agent.Cells.getCells(id);
+            this.playerCells = await agent.Cells.list(id);
         } catch(error) {
             console.log(error);
         }
@@ -31,7 +31,7 @@ export default class CellStore {
 
     loadOpponentCells = async (id: string) => {
         try {
-            this.opponentCells = await agent.Cells.getCells(id);
+            this.opponentCells = await agent.Cells.list(id);
         } catch(error) {
             console.log(error);
         }

@@ -44,7 +44,7 @@ export default class UserStore {
                 history.push('/gamelist');
                 store.modalStore.closeModal();
             }
-            if(game.gameStatus == 'Started')
+            if(game.status == 'Started')
             {
                 var isFirstPlayerGoing = await agent.Account.checkStatusGoing(this.game!.firstPlayerName!);
                 var isSecondPlayerGoing = await agent.Account.checkStatusGoing(this.game!.secondPlayerName!);
@@ -56,13 +56,13 @@ export default class UserStore {
                 history.push('/game');
                 store.modalStore.closeModal();
             }
-            if(game.gameStatus == 'NotReady' && game.firstPlayerName == user.name)
+            if(game.status == 'NotReady' && game.firstPlayerName == user.name)
             {
                 this.fieldId = game.firstPlayerFieldId as string;
                 history.push('/gameprepare');
                 store.modalStore.closeModal();
             }
-            if(game.gameStatus == 'NotReady' && game.secondPlayerName == user.name)
+            if(game.status == 'NotReady' && game.secondPlayerName == user.name)
             {
                 this.fieldId = game.secondPlayerFieldId as string;
                 history.push('/gameprepare');
@@ -118,7 +118,7 @@ export default class UserStore {
             {
                 history.push('/gamelist');
             }
-            if(game.gameStatus == 'Started')
+            if(game.status == 'Started')
             {
                 var isFirstPlayerGoing = await agent.Account.checkStatusGoing(this.game!.firstPlayerName!);
                 var isSecondPlayerGoing = await agent.Account.checkStatusGoing(this.game!.secondPlayerName!);
@@ -171,7 +171,7 @@ export default class UserStore {
 
     readyToGame = async (id: string) => {
         try {
-            var countShips = await agent.Fields.checkCountOfShips(id);
+            var countShips = await agent.Fields.checkCount(id);
             if(countShips == 10) {
                 agent.Account.changeToReady(this.user!.name);
                 store.gameStore.isReady = true;
@@ -218,17 +218,17 @@ export default class UserStore {
         try {
             if(this.isGoing)
             {
-                await agent.Shoots.takeAShoot(shoot);
+                await agent.Shoots.shoot(shoot);
                 this.isGoing = await agent.Account.checkStatusGoing(this.user!.name);
                 if(this.game!.firstPlayerName == this.user!.name)
                 {
-                    store.cellStore.playerCells = await agent.Cells.getCells(this.game!.firstPlayerFieldId!);
-                    store.cellStore.opponentCells = await agent.Cells.getCells(this.game!.secondPlayerFieldId!);
+                    store.cellStore.playerCells = await agent.Cells.list(this.game!.firstPlayerFieldId!);
+                    store.cellStore.opponentCells = await agent.Cells.list(this.game!.secondPlayerFieldId!);
                 }
                 if(this.game!.secondPlayerName == this.user!.name)
                 {
-                    store.cellStore.playerCells = await agent.Cells.getCells(this.game!.secondPlayerFieldId!);
-                    store.cellStore.opponentCells = await agent.Cells.getCells(this.game!.firstPlayerFieldId!);
+                    store.cellStore.playerCells = await agent.Cells.list(this.game!.secondPlayerFieldId!);
+                    store.cellStore.opponentCells = await agent.Cells.list(this.game!.firstPlayerFieldId!);
                 }
                 store.gameStore.checkCountOfShipsAliveOnField();
                 this.moveCount += 1;

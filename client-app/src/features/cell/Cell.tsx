@@ -4,13 +4,13 @@ interface Props {
     id: string | null;
     x: number;
     y: number;
-    cellStatus: string;
+    status: string;
 }
 
 export default function Cell(props: Props) {
   return (
     <>
-      {props.cellStatus == "None" ? 
+      {props.status == "None" ? 
       (
         <th key={props.id}></th>
       )
@@ -18,7 +18,7 @@ export default function Cell(props: Props) {
       (
         null
       )}
-      {props.cellStatus == "Busy" ? 
+      {props.status == "Busy" ? 
       (
         <th style={{background: "green"}} key={props.id}></th>
       )
@@ -26,7 +26,7 @@ export default function Cell(props: Props) {
       (
         null
       )}
-      {props.cellStatus == "Forbidden" ? 
+      {props.status == "Forbidden" ? 
       (
         <th style={{background: "gray"}} key={props.id}></th>
       )
@@ -34,7 +34,7 @@ export default function Cell(props: Props) {
       (
         null
       )}
-      {props.cellStatus == "ShootWithoutHit" ? 
+      {props.status == "ShootWithoutHit" ? 
       (
         <th key={props.id}></th>
       )
@@ -42,7 +42,7 @@ export default function Cell(props: Props) {
       (
         null
       )}
-      {props.cellStatus == "Destroyed" ? 
+      {props.status == "Destroyed" ? 
       (
         <th key={props.id}></th>
       )

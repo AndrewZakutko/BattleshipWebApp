@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import React, { useEffect } from "react";
+import React from "react";
 import { useStore } from "../../app/stores/store";
 import SecondPlayerCell from "../cell/OpponentCell";
 
@@ -32,61 +32,61 @@ export default observer(function OpponentField(){
                                         id={cellStore.opponentCells[0].id}
                                         x={cellStore.opponentCells[0].x}
                                         y={cellStore.opponentCells[0].y}
-                                        cellStatus={cellStore.opponentCells[0].cellStatus} 
+                                        status={cellStore.opponentCells[0].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[1].id}
                                         x={cellStore.opponentCells[1].x}
                                         y={cellStore.opponentCells[1].y}
-                                        cellStatus={cellStore.opponentCells[1].cellStatus} 
+                                        status={cellStore.opponentCells[1].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[2].id}
                                         x={cellStore.opponentCells[2].x}
                                         y={cellStore.opponentCells[2].y}
-                                        cellStatus={cellStore.opponentCells[2].cellStatus} 
+                                        status={cellStore.opponentCells[2].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[3].id}
                                         x={cellStore.opponentCells[3].x}
                                         y={cellStore.opponentCells[3].y}
-                                        cellStatus={cellStore.opponentCells[3].cellStatus} 
+                                        status={cellStore.opponentCells[3].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[4].id}
                                         x={cellStore.opponentCells[4].x}
                                         y={cellStore.opponentCells[4].y}
-                                        cellStatus={cellStore.opponentCells[4].cellStatus} 
+                                        status={cellStore.opponentCells[4].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[5].id}
                                         x={cellStore.opponentCells[5].x}
                                         y={cellStore.opponentCells[5].y}
-                                        cellStatus={cellStore.opponentCells[5].cellStatus} 
+                                        status={cellStore.opponentCells[5].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[6].id}
                                         x={cellStore.opponentCells[6].x}
                                         y={cellStore.opponentCells[6].y}
-                                        cellStatus={cellStore.opponentCells[6].cellStatus} 
+                                        status={cellStore.opponentCells[6].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[7].id}
                                         x={cellStore.opponentCells[7].x}
                                         y={cellStore.opponentCells[7].y}
-                                        cellStatus={cellStore.opponentCells[7].cellStatus} 
+                                        status={cellStore.opponentCells[7].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[8].id}
                                         x={cellStore.opponentCells[8].x}
                                         y={cellStore.opponentCells[8].y}
-                                        cellStatus={cellStore.opponentCells[8].cellStatus} 
+                                        status={cellStore.opponentCells[8].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[9].id}
                                         x={cellStore.opponentCells[9].x}
                                         y={cellStore.opponentCells[9].y}
-                                        cellStatus={cellStore.opponentCells[9].cellStatus} 
+                                        status={cellStore.opponentCells[9].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -95,61 +95,61 @@ export default observer(function OpponentField(){
                                         id={cellStore.opponentCells[10].id}
                                         x={cellStore.opponentCells[10].x}
                                         y={cellStore.opponentCells[10].y}
-                                        cellStatus={cellStore.opponentCells[10].cellStatus} 
+                                        status={cellStore.opponentCells[10].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[11].id}
                                         x={cellStore.opponentCells[11].x}
                                         y={cellStore.opponentCells[11].y}
-                                        cellStatus={cellStore.opponentCells[11].cellStatus} 
+                                        status={cellStore.opponentCells[11].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[12].id}
                                         x={cellStore.opponentCells[12].x}
                                         y={cellStore.opponentCells[12].y}
-                                        cellStatus={cellStore.opponentCells[12].cellStatus} 
+                                        status={cellStore.opponentCells[12].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[13].id}
                                         x={cellStore.opponentCells[13].x}
                                         y={cellStore.opponentCells[13].y}
-                                        cellStatus={cellStore.opponentCells[13].cellStatus} 
+                                        status={cellStore.opponentCells[13].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[14].id}
                                         x={cellStore.opponentCells[14].x}
                                         y={cellStore.opponentCells[14].y}
-                                        cellStatus={cellStore.opponentCells[14].cellStatus} 
+                                        status={cellStore.opponentCells[14].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[15].id}
                                         x={cellStore.opponentCells[15].x}
                                         y={cellStore.opponentCells[15].y}
-                                        cellStatus={cellStore.opponentCells[15].cellStatus} 
+                                        status={cellStore.opponentCells[15].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[16].id}
                                         x={cellStore.opponentCells[16].x}
                                         y={cellStore.opponentCells[16].y}
-                                        cellStatus={cellStore.opponentCells[16].cellStatus} 
+                                        status={cellStore.opponentCells[16].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[17].id}
                                         x={cellStore.opponentCells[17].x}
                                         y={cellStore.opponentCells[17].y}
-                                        cellStatus={cellStore.opponentCells[17].cellStatus} 
+                                        status={cellStore.opponentCells[17].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[18].id}
                                         x={cellStore.opponentCells[18].x}
                                         y={cellStore.opponentCells[18].y}
-                                        cellStatus={cellStore.opponentCells[18].cellStatus} 
+                                        status={cellStore.opponentCells[18].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[19].id}
                                         x={cellStore.opponentCells[19].x}
                                         y={cellStore.opponentCells[19].y}
-                                        cellStatus={cellStore.opponentCells[19].cellStatus} 
+                                        status={cellStore.opponentCells[19].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -158,61 +158,61 @@ export default observer(function OpponentField(){
                                         id={cellStore.opponentCells[20].id}
                                         x={cellStore.opponentCells[20].x}
                                         y={cellStore.opponentCells[20].y}
-                                        cellStatus={cellStore.opponentCells[20].cellStatus} 
+                                        status={cellStore.opponentCells[20].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[21].id}
                                         x={cellStore.opponentCells[21].x}
                                         y={cellStore.opponentCells[21].y}
-                                        cellStatus={cellStore.opponentCells[21].cellStatus} 
+                                        status={cellStore.opponentCells[21].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[22].id}
                                         x={cellStore.opponentCells[22].x}
                                         y={cellStore.opponentCells[22].y}
-                                        cellStatus={cellStore.opponentCells[22].cellStatus} 
+                                        status={cellStore.opponentCells[22].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[23].id}
                                         x={cellStore.opponentCells[23].x}
                                         y={cellStore.opponentCells[23].y}
-                                        cellStatus={cellStore.opponentCells[23].cellStatus} 
+                                        status={cellStore.opponentCells[23].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[24].id}
                                         x={cellStore.opponentCells[24].x}
                                         y={cellStore.opponentCells[24].y}
-                                        cellStatus={cellStore.opponentCells[24].cellStatus} 
+                                        status={cellStore.opponentCells[24].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[25].id}
                                         x={cellStore.opponentCells[25].x}
                                         y={cellStore.opponentCells[25].y}
-                                        cellStatus={cellStore.opponentCells[25].cellStatus} 
+                                        status={cellStore.opponentCells[25].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[26].id}
                                         x={cellStore.opponentCells[26].x}
                                         y={cellStore.opponentCells[26].y}
-                                        cellStatus={cellStore.opponentCells[26].cellStatus} 
+                                        status={cellStore.opponentCells[26].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[27].id}
                                         x={cellStore.opponentCells[27].x}
                                         y={cellStore.opponentCells[27].y}
-                                        cellStatus={cellStore.opponentCells[27].cellStatus} 
+                                        status={cellStore.opponentCells[27].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[28].id}
                                         x={cellStore.opponentCells[28].x}
                                         y={cellStore.opponentCells[28].y}
-                                        cellStatus={cellStore.opponentCells[28].cellStatus} 
+                                        status={cellStore.opponentCells[28].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[29].id}
                                         x={cellStore.opponentCells[29].x}
                                         y={cellStore.opponentCells[29].y}
-                                        cellStatus={cellStore.opponentCells[29].cellStatus} 
+                                        status={cellStore.opponentCells[29].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -221,61 +221,61 @@ export default observer(function OpponentField(){
                                         id={cellStore.opponentCells[30].id}
                                         x={cellStore.opponentCells[30].x}
                                         y={cellStore.opponentCells[30].y}
-                                        cellStatus={cellStore.opponentCells[30].cellStatus} 
+                                        status={cellStore.opponentCells[30].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[31].id}
                                         x={cellStore.opponentCells[31].x}
                                         y={cellStore.opponentCells[31].y}
-                                        cellStatus={cellStore.opponentCells[31].cellStatus} 
+                                        status={cellStore.opponentCells[31].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[32].id}
                                         x={cellStore.opponentCells[32].x}
                                         y={cellStore.opponentCells[32].y}
-                                        cellStatus={cellStore.opponentCells[32].cellStatus} 
+                                        status={cellStore.opponentCells[32].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[33].id}
                                         x={cellStore.opponentCells[33].x}
                                         y={cellStore.opponentCells[33].y}
-                                        cellStatus={cellStore.opponentCells[33].cellStatus} 
+                                        status={cellStore.opponentCells[33].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[34].id}
                                         x={cellStore.opponentCells[34].x}
                                         y={cellStore.opponentCells[34].y}
-                                        cellStatus={cellStore.opponentCells[34].cellStatus} 
+                                        status={cellStore.opponentCells[34].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[35].id}
                                         x={cellStore.opponentCells[35].x}
                                         y={cellStore.opponentCells[35].y}
-                                        cellStatus={cellStore.opponentCells[35].cellStatus} 
+                                        status={cellStore.opponentCells[35].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[36].id}
                                         x={cellStore.opponentCells[36].x}
                                         y={cellStore.opponentCells[36].y}
-                                        cellStatus={cellStore.opponentCells[36].cellStatus} 
+                                        status={cellStore.opponentCells[36].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[37].id}
                                         x={cellStore.opponentCells[37].x}
                                         y={cellStore.opponentCells[37].y}
-                                        cellStatus={cellStore.opponentCells[37].cellStatus} 
+                                        status={cellStore.opponentCells[37].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[38].id}
                                         x={cellStore.opponentCells[38].x}
                                         y={cellStore.opponentCells[38].y}
-                                        cellStatus={cellStore.opponentCells[38].cellStatus} 
+                                        status={cellStore.opponentCells[38].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[39].id}
                                         x={cellStore.opponentCells[39].x}
                                         y={cellStore.opponentCells[39].y}
-                                        cellStatus={cellStore.opponentCells[39].cellStatus} 
+                                        status={cellStore.opponentCells[39].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -284,61 +284,61 @@ export default observer(function OpponentField(){
                                         id={cellStore.opponentCells[40].id}
                                         x={cellStore.opponentCells[40].x}
                                         y={cellStore.opponentCells[40].y}
-                                        cellStatus={cellStore.opponentCells[40].cellStatus} 
+                                        status={cellStore.opponentCells[40].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[41].id}
                                         x={cellStore.opponentCells[41].x}
                                         y={cellStore.opponentCells[41].y}
-                                        cellStatus={cellStore.opponentCells[41].cellStatus} 
+                                        status={cellStore.opponentCells[41].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[42].id}
                                         x={cellStore.opponentCells[42].x}
                                         y={cellStore.opponentCells[42].y}
-                                        cellStatus={cellStore.opponentCells[42].cellStatus} 
+                                        status={cellStore.opponentCells[42].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[43].id}
                                         x={cellStore.opponentCells[43].x}
                                         y={cellStore.opponentCells[43].y}
-                                        cellStatus={cellStore.opponentCells[43].cellStatus} 
+                                        status={cellStore.opponentCells[43].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[44].id}
                                         x={cellStore.opponentCells[44].x}
                                         y={cellStore.opponentCells[44].y}
-                                        cellStatus={cellStore.opponentCells[44].cellStatus} 
+                                        status={cellStore.opponentCells[44].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[45].id}
                                         x={cellStore.opponentCells[45].x}
                                         y={cellStore.opponentCells[45].y}
-                                        cellStatus={cellStore.opponentCells[45].cellStatus} 
+                                        status={cellStore.opponentCells[45].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[46].id}
                                         x={cellStore.opponentCells[46].x}
                                         y={cellStore.opponentCells[46].y}
-                                        cellStatus={cellStore.opponentCells[46].cellStatus} 
+                                        status={cellStore.opponentCells[46].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[47].id}
                                         x={cellStore.opponentCells[47].x}
                                         y={cellStore.opponentCells[47].y}
-                                        cellStatus={cellStore.opponentCells[47].cellStatus} 
+                                        status={cellStore.opponentCells[47].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[48].id}
                                         x={cellStore.opponentCells[48].x}
                                         y={cellStore.opponentCells[48].y}
-                                        cellStatus={cellStore.opponentCells[48].cellStatus} 
+                                        status={cellStore.opponentCells[48].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[49].id}
                                         x={cellStore.opponentCells[49].x}
                                         y={cellStore.opponentCells[49].y}
-                                        cellStatus={cellStore.opponentCells[49].cellStatus} 
+                                        status={cellStore.opponentCells[49].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -347,61 +347,61 @@ export default observer(function OpponentField(){
                                         id={cellStore.opponentCells[50].id}
                                         x={cellStore.opponentCells[50].x}
                                         y={cellStore.opponentCells[50].y}
-                                        cellStatus={cellStore.opponentCells[50].cellStatus} 
+                                        status={cellStore.opponentCells[50].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[51].id}
                                         x={cellStore.opponentCells[51].x}
                                         y={cellStore.opponentCells[51].y}
-                                        cellStatus={cellStore.opponentCells[51].cellStatus} 
+                                        status={cellStore.opponentCells[51].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[52].id}
                                         x={cellStore.opponentCells[52].x}
                                         y={cellStore.opponentCells[52].y}
-                                        cellStatus={cellStore.opponentCells[52].cellStatus} 
+                                        status={cellStore.opponentCells[52].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[53].id}
                                         x={cellStore.opponentCells[53].x}
                                         y={cellStore.opponentCells[53].y}
-                                        cellStatus={cellStore.opponentCells[53].cellStatus} 
+                                        status={cellStore.opponentCells[53].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[54].id}
                                         x={cellStore.opponentCells[54].x}
                                         y={cellStore.opponentCells[54].y}
-                                        cellStatus={cellStore.opponentCells[54].cellStatus} 
+                                        status={cellStore.opponentCells[54].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[55].id}
                                         x={cellStore.opponentCells[55].x}
                                         y={cellStore.opponentCells[55].y}
-                                        cellStatus={cellStore.opponentCells[55].cellStatus} 
+                                        status={cellStore.opponentCells[55].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[56].id}
                                         x={cellStore.opponentCells[56].x}
                                         y={cellStore.opponentCells[56].y}
-                                        cellStatus={cellStore.opponentCells[56].cellStatus} 
+                                        status={cellStore.opponentCells[56].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[57].id}
                                         x={cellStore.opponentCells[57].x}
                                         y={cellStore.opponentCells[57].y}
-                                        cellStatus={cellStore.opponentCells[57].cellStatus} 
+                                        status={cellStore.opponentCells[57].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[58].id}
                                         x={cellStore.opponentCells[58].x}
                                         y={cellStore.opponentCells[58].y}
-                                        cellStatus={cellStore.opponentCells[58].cellStatus} 
+                                        status={cellStore.opponentCells[58].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[59].id}
                                         x={cellStore.opponentCells[59].x}
                                         y={cellStore.opponentCells[59].y}
-                                        cellStatus={cellStore.opponentCells[59].cellStatus} 
+                                        status={cellStore.opponentCells[59].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -410,61 +410,61 @@ export default observer(function OpponentField(){
                                         id={cellStore.opponentCells[60].id}
                                         x={cellStore.opponentCells[60].x}
                                         y={cellStore.opponentCells[60].y}
-                                        cellStatus={cellStore.opponentCells[60].cellStatus} 
+                                        status={cellStore.opponentCells[60].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[61].id}
                                         x={cellStore.opponentCells[61].x}
                                         y={cellStore.opponentCells[61].y}
-                                        cellStatus={cellStore.opponentCells[61].cellStatus} 
+                                        status={cellStore.opponentCells[61].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[62].id}
                                         x={cellStore.opponentCells[62].x}
                                         y={cellStore.opponentCells[62].y}
-                                        cellStatus={cellStore.opponentCells[62].cellStatus} 
+                                        status={cellStore.opponentCells[62].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[63].id}
                                         x={cellStore.opponentCells[63].x}
                                         y={cellStore.opponentCells[63].y}
-                                        cellStatus={cellStore.opponentCells[63].cellStatus} 
+                                        status={cellStore.opponentCells[63].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[64].id}
                                         x={cellStore.opponentCells[64].x}
                                         y={cellStore.opponentCells[64].y}
-                                        cellStatus={cellStore.opponentCells[64].cellStatus} 
+                                        status={cellStore.opponentCells[64].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[65].id}
                                         x={cellStore.opponentCells[65].x}
                                         y={cellStore.opponentCells[65].y}
-                                        cellStatus={cellStore.opponentCells[65].cellStatus} 
+                                        status={cellStore.opponentCells[65].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[66].id}
                                         x={cellStore.opponentCells[66].x}
                                         y={cellStore.opponentCells[66].y}
-                                        cellStatus={cellStore.opponentCells[66].cellStatus} 
+                                        status={cellStore.opponentCells[66].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[67].id}
                                         x={cellStore.opponentCells[67].x}
                                         y={cellStore.opponentCells[67].y}
-                                        cellStatus={cellStore.opponentCells[67].cellStatus} 
+                                        status={cellStore.opponentCells[67].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[68].id}
                                         x={cellStore.opponentCells[68].x}
                                         y={cellStore.opponentCells[68].y}
-                                        cellStatus={cellStore.opponentCells[68].cellStatus} 
+                                        status={cellStore.opponentCells[68].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[69].id}
                                         x={cellStore.opponentCells[69].x}
                                         y={cellStore.opponentCells[69].y}
-                                        cellStatus={cellStore.opponentCells[69].cellStatus} 
+                                        status={cellStore.opponentCells[69].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -473,61 +473,61 @@ export default observer(function OpponentField(){
                                         id={cellStore.opponentCells[70].id}
                                         x={cellStore.opponentCells[70].x}
                                         y={cellStore.opponentCells[70].y}
-                                        cellStatus={cellStore.opponentCells[70].cellStatus} 
+                                        status={cellStore.opponentCells[70].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[71].id}
                                         x={cellStore.opponentCells[71].x}
                                         y={cellStore.opponentCells[71].y}
-                                        cellStatus={cellStore.opponentCells[71].cellStatus} 
+                                        status={cellStore.opponentCells[71].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[72].id}
                                         x={cellStore.opponentCells[72].x}
                                         y={cellStore.opponentCells[72].y}
-                                        cellStatus={cellStore.opponentCells[72].cellStatus} 
+                                        status={cellStore.opponentCells[72].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[73].id}
                                         x={cellStore.opponentCells[73].x}
                                         y={cellStore.opponentCells[73].y}
-                                        cellStatus={cellStore.opponentCells[73].cellStatus} 
+                                        status={cellStore.opponentCells[73].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[74].id}
                                         x={cellStore.opponentCells[74].x}
                                         y={cellStore.opponentCells[74].y}
-                                        cellStatus={cellStore.opponentCells[74].cellStatus} 
+                                        status={cellStore.opponentCells[74].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[75].id}
                                         x={cellStore.opponentCells[75].x}
                                         y={cellStore.opponentCells[75].y}
-                                        cellStatus={cellStore.opponentCells[75].cellStatus} 
+                                        status={cellStore.opponentCells[75].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[76].id}
                                         x={cellStore.opponentCells[76].x}
                                         y={cellStore.opponentCells[76].y}
-                                        cellStatus={cellStore.opponentCells[76].cellStatus} 
+                                        status={cellStore.opponentCells[76].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[77].id}
                                         x={cellStore.opponentCells[77].x}
                                         y={cellStore.opponentCells[77].y}
-                                        cellStatus={cellStore.opponentCells[77].cellStatus} 
+                                        status={cellStore.opponentCells[77].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[78].id}
                                         x={cellStore.opponentCells[78].x}
                                         y={cellStore.opponentCells[78].y}
-                                        cellStatus={cellStore.opponentCells[78].cellStatus} 
+                                        status={cellStore.opponentCells[78].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[79].id}
                                         x={cellStore.opponentCells[79].x}
                                         y={cellStore.opponentCells[79].y}
-                                        cellStatus={cellStore.opponentCells[79].cellStatus} 
+                                        status={cellStore.opponentCells[79].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -536,61 +536,61 @@ export default observer(function OpponentField(){
                                         id={cellStore.opponentCells[80].id}
                                         x={cellStore.opponentCells[80].x}
                                         y={cellStore.opponentCells[80].y}
-                                        cellStatus={cellStore.opponentCells[80].cellStatus} 
+                                        status={cellStore.opponentCells[80].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[81].id}
                                         x={cellStore.opponentCells[81].x}
                                         y={cellStore.opponentCells[81].y}
-                                        cellStatus={cellStore.opponentCells[81].cellStatus} 
+                                        status={cellStore.opponentCells[81].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[82].id}
                                         x={cellStore.opponentCells[82].x}
                                         y={cellStore.opponentCells[82].y}
-                                        cellStatus={cellStore.opponentCells[82].cellStatus} 
+                                        status={cellStore.opponentCells[82].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[83].id}
                                         x={cellStore.opponentCells[83].x}
                                         y={cellStore.opponentCells[83].y}
-                                        cellStatus={cellStore.opponentCells[83].cellStatus} 
+                                        status={cellStore.opponentCells[83].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[84].id}
                                         x={cellStore.opponentCells[84].x}
                                         y={cellStore.opponentCells[84].y}
-                                        cellStatus={cellStore.opponentCells[84].cellStatus} 
+                                        status={cellStore.opponentCells[84].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[85].id}
                                         x={cellStore.opponentCells[85].x}
                                         y={cellStore.opponentCells[85].y}
-                                        cellStatus={cellStore.opponentCells[85].cellStatus} 
+                                        status={cellStore.opponentCells[85].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[86].id}
                                         x={cellStore.opponentCells[86].x}
                                         y={cellStore.opponentCells[86].y}
-                                        cellStatus={cellStore.opponentCells[86].cellStatus} 
+                                        status={cellStore.opponentCells[86].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[87].id}
                                         x={cellStore.opponentCells[87].x}
                                         y={cellStore.opponentCells[87].y}
-                                        cellStatus={cellStore.opponentCells[87].cellStatus} 
+                                        status={cellStore.opponentCells[87].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[88].id}
                                         x={cellStore.opponentCells[88].x}
                                         y={cellStore.opponentCells[88].y}
-                                        cellStatus={cellStore.opponentCells[88].cellStatus} 
+                                        status={cellStore.opponentCells[88].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[89].id}
                                         x={cellStore.opponentCells[89].x}
                                         y={cellStore.opponentCells[89].y}
-                                        cellStatus={cellStore.opponentCells[89].cellStatus} 
+                                        status={cellStore.opponentCells[89].status} 
                                     />
                                 </tr>
                                 <tr>
@@ -599,61 +599,61 @@ export default observer(function OpponentField(){
                                         id={cellStore.opponentCells[90].id}
                                         x={cellStore.opponentCells[90].x}
                                         y={cellStore.opponentCells[90].y}
-                                        cellStatus={cellStore.opponentCells[90].cellStatus} 
+                                        status={cellStore.opponentCells[90].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[91].id}
                                         x={cellStore.opponentCells[91].x}
                                         y={cellStore.opponentCells[91].y}
-                                        cellStatus={cellStore.opponentCells[91].cellStatus} 
+                                        status={cellStore.opponentCells[91].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[92].id}
                                         x={cellStore.opponentCells[92].x}
                                         y={cellStore.opponentCells[92].y}
-                                        cellStatus={cellStore.opponentCells[92].cellStatus} 
+                                        status={cellStore.opponentCells[92].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[93].id}
                                         x={cellStore.opponentCells[93].x}
                                         y={cellStore.opponentCells[93].y}
-                                        cellStatus={cellStore.opponentCells[93].cellStatus} 
+                                        status={cellStore.opponentCells[93].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[94].id}
                                         x={cellStore.opponentCells[94].x}
                                         y={cellStore.opponentCells[94].y}
-                                        cellStatus={cellStore.opponentCells[94].cellStatus} 
+                                        status={cellStore.opponentCells[94].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[95].id}
                                         x={cellStore.opponentCells[95].x}
                                         y={cellStore.opponentCells[95].y}
-                                        cellStatus={cellStore.opponentCells[95].cellStatus} 
+                                        status={cellStore.opponentCells[95].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[96].id}
                                         x={cellStore.opponentCells[96].x}
                                         y={cellStore.opponentCells[96].y}
-                                        cellStatus={cellStore.opponentCells[96].cellStatus} 
+                                        status={cellStore.opponentCells[96].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[97].id}
                                         x={cellStore.opponentCells[97].x}
                                         y={cellStore.opponentCells[97].y}
-                                        cellStatus={cellStore.opponentCells[97].cellStatus} 
+                                        status={cellStore.opponentCells[97].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[98].id}
                                         x={cellStore.opponentCells[98].x}
                                         y={cellStore.opponentCells[98].y}
-                                        cellStatus={cellStore.opponentCells[98].cellStatus} 
+                                        status={cellStore.opponentCells[98].status} 
                                     />
                                     <SecondPlayerCell
                                         id={cellStore.opponentCells[99].id}
                                         x={cellStore.opponentCells[99].x}
                                         y={cellStore.opponentCells[99].y}
-                                        cellStatus={cellStore.opponentCells[99].cellStatus} 
+                                        status={cellStore.opponentCells[99].status} 
                                     />
                                 </tr>
                             </>

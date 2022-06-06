@@ -31,14 +31,20 @@ export default class GameStore {
     loadGameStatus = async () => {
         try {
             var game = await agent.Games.getByName(store.userStore.user!.name);
-            this.isFirstPlayerReady = await agent.Account.checkStatus(store.userStore.game!.firstPlayerName!);
-            this.isSecondPlayerReady = await agent.Account.checkStatus(store.userStore.game!.secondPlayerName!);
-            if(this.isFirstPlayerReady && this.isSecondPlayerReady && game.gameStatus != 'Started')
+            if(store.userStore.game!.firstPlayerName != null)
+            {
+                this.isFirstPlayerReady = await agent.Account.checkStatusPrepare(store.userStore.game!.firstPlayerName!);
+            }
+            if(store.userStore.game!.secondPlayerName != null)
+            {
+                this.isSecondPlayerReady = await agent.Account.checkStatusPrepare(store.userStore.game!.secondPlayerName!);
+            }
+            if(this.isFirstPlayerReady && this.isSecondPlayerReady && game.status != 'Started')
             {
                 await agent.Games.changeStatusToStarted(store.userStore.game!.id);
                 history.push('/game');
             }
-            if(this.isFirstPlayerReady && this.isSecondPlayerReady && game.gameStatus == 'Started') {
+            if(this.isFirstPlayerReady && this.isSecondPlayerReady && game.status == 'Started') {
                 history.push('/game');
             }
         } catch (error) {
@@ -49,7 +55,7 @@ export default class GameStore {
     clearField = async (id: string) => {
         try {
             await agent.Fields.clear(id);
-            store.cellStore.cells = await agent.Cells.getCells(store.userStore.fieldId!);
+            store.cellStore.cells = await agent.Cells.list(store.userStore.fieldId!);
         } catch(error) {
             console.log(error);
         }
@@ -69,18 +75,18 @@ export default class GameStore {
     checkCountOfShipsAliveOnField = async () => {
         try {
             var game = await agent.Games.getByName(store.userStore.user!.name);
-            if(game.gameStatus == 'Finished')
+            if(game.status == 'Finished')
             {
                 history.push('/gamefinish');
             }
 
-            var countOfFisrtPlayerShipsAlive = await agent.Fields.checkCountOfShipsAlive(store.userStore.game!.firstPlayerFieldId!);
-            var countOfSecondPlayerShipsAlive = await agent.Fields.checkCountOfShipsAlive(store.userStore.game!.secondPlayerFieldId!);
+            var countOfFisrtPlayerShipsAlive = await agent.Fields.checkCountAlive(store.userStore.game!.firstPlayerFieldId!);
+            var countOfSecondPlayerShipsAlive = await agent.Fields.checkCountAlive(store.userStore.game!.secondPlayerFieldId!);
 
             if(countOfFisrtPlayerShipsAlive == 0) {
                 this.finishGame.gameId = store.userStore.game!.id;
                 this.finishGame.nameOfWinner = store.userStore.game!.secondPlayerName;
-                this.finishGame.resultInfo = await agent.Fields.fieldInfo(store.userStore.game!.secondPlayerFieldId!);
+                this.finishGame.resultInfo = await agent.Fields.info(store.userStore.game!.secondPlayerFieldId!);
                 store.userStore.game!.nameOfWinner = store.userStore.game!.firstPlayerName;
                 store.userStore.game!.moveCount = store.userStore.moveCount;
                 store.userStore.game!.resultInfo = this.finishGame.resultInfo;
@@ -91,7 +97,7 @@ export default class GameStore {
             if(countOfSecondPlayerShipsAlive == 0) {
                 this.finishGame.gameId = store.userStore.game!.id;
                 this.finishGame.nameOfWinner = store.userStore.game!.firstPlayerName;
-                this.finishGame.resultInfo = await agent.Fields.fieldInfo(store.userStore.game!.firstPlayerFieldId!);
+                this.finishGame.resultInfo = await agent.Fields.info(store.userStore.game!.firstPlayerFieldId!);
                 store.userStore.game!.nameOfWinner = store.userStore.game!.firstPlayerName;
                 store.userStore.game!.moveCount = store.userStore.moveCount;
                 store.userStore.game!.resultInfo = this.finishGame.resultInfo;
@@ -107,7 +113,7 @@ export default class GameStore {
     addShip = async (ship: AddShip) => {
         try {
             await agent.Ship.add(ship);
-            store.cellStore.cells = await agent.Cells.getCells(store.userStore.fieldId!);
+            store.cellStore.cells = await agent.Cells.list(store.userStore.fieldId!);
         } catch (error) {
             console.log(error);
         }

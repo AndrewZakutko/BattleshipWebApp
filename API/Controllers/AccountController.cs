@@ -1,7 +1,7 @@
 using System.Security.Claims;
 using API.DTOs;
 using API.Services;
-using Application.Handlers.AccountHandlers;
+using Application.Handlers.Accounts;
 using Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -20,7 +20,7 @@ namespace API.Controllers
         private readonly TokenService _tokenService;
 
         public AccountController(UserManager<PlayerDb> userManager, SignInManager<PlayerDb> signInManager, 
-            TokenService tokenService,IHttpContextAccessor contextAccessor)
+            TokenService tokenService)
         {
             _tokenService = tokenService;
             _signInManager = signInManager;
@@ -88,22 +88,22 @@ namespace API.Controllers
             return CreatePlayerObject(user);
         }
 
-        [HttpGet("changeStatus/{name}")]
+        [HttpGet("changeStatusPrepare/{name}")]
         public async Task<IActionResult> ChangeStatusToReady(string name)
         {
-            return HandleResult(await Mediator.Send(new ChangeToReady.Command { Name = name }));
+            return HandleResult(await Mediator.Send(new ReadyToGame.Command { Name = name }));
         }
 
-        [HttpGet("checkStatus/{name}")]
+        [HttpGet("checkStatusPrepare/{name}")]
         public async Task<IActionResult> CheckStatus(string name)
         {
-            return HandleResult(await Mediator.Send(new CheckToReady.Command { Name = name }));
+            return HandleResult(await Mediator.Send(new CheckStatusPrepare.Command { Name = name }));
         }
 
         [HttpGet("changeStatusGoing/{name}")]
         public async Task<IActionResult> ChangeStatusGoing(string name)
         {
-            return HandleResult(await Mediator.Send(new ChangeToReadyGoing.Command { Name = name }));
+            return HandleResult(await Mediator.Send(new ReadyToGoing.Command { Name = name }));
         }
 
         [HttpGet("checkStatusGoing/{name}")]
@@ -111,7 +111,6 @@ namespace API.Controllers
         {
             return HandleResult(await Mediator.Send(new CheckStatusGoing.Command { Name = name }));
         }
-
 
         private PlayerDto CreatePlayerObject(PlayerDb player)
         {

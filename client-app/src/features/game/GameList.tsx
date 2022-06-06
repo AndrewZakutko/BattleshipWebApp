@@ -39,11 +39,11 @@ export default observer(function GameList() {
                             {games!.map((game) => 
                             (
                                 <>
-                                    {game.gameStatus == 'NotReady' && game.firstPlayerName != userStore.user!.name && game.secondPlayerName == null ? 
+                                    {game.status == 'NotReady' && game.firstPlayerName != userStore.user!.name && game.secondPlayerName == null ? 
                                     (
                                         <li key={game.id}>
                                             <p>Owner: {game.firstPlayerName}</p>
-                                            <p>Game status: {game.gameStatus}</p>
+                                            <p>Game status: {game.status}</p>
                                             <Button onClick={() => handleConnect(game.id, userStore.user!)} style={{marginTop: '10px'}} size="small" color="blue">Connect</Button>
                                         </li>
                                     )
