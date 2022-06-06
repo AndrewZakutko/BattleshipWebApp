@@ -1,4 +1,4 @@
-namespace Application.Entities
+namespace Application.EntityHalpers
 {
     public class ConnectUser
     {

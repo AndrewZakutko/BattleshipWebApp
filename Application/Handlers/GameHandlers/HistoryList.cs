@@ -36,7 +36,7 @@ namespace Application.Handlers.GameHandlers
 
                 foreach(var game in historyListGames)
                 {
-                    if(game.GameStatus != GameStatus.Started.ToString())
+                    if(game.Status != GameStatus.Started.ToString())
                     {
                         var g = new Game();
                         _mapper.Map(game, g);

@@ -22,7 +22,7 @@ namespace Application.Managers
                         Id = Guid.NewGuid(),
                         X = i,
                         Y = j,
-                        CellStatus = CellStatus.None.ToString()
+                        Status = CellStatus.None.ToString()
                     };
                 }
             }
@@ -30,7 +30,7 @@ namespace Application.Managers
             foreach (var cell in cells)
             {
                 Cells[cell.X, cell.Y].Id = cell.Id;   
-                Cells[cell.X, cell.Y].CellStatus = cell.CellStatus;
+                Cells[cell.X, cell.Y].Status = cell.Status;
             }
 
             SetForbiddenCells(cells);
@@ -41,14 +41,14 @@ namespace Application.Managers
                 {
                     var x = shoot.X;
                     var y = shoot.Y;
-                    if (Cells[x, y].CellStatus == CellStatus.Busy.ToString())
+                    if (Cells[x, y].Status == CellStatus.Busy.ToString())
                     {
-                        Cells[x, y].CellStatus = CellStatus.Destroyed.ToString();
+                        Cells[x, y].Status = CellStatus.Destroyed.ToString();
                     }
-                    if(Cells[x, y].CellStatus == CellStatus.Forbidden.ToString() ||
-                        Cells[x, y].CellStatus == CellStatus.None.ToString())
+                    if(Cells[x, y].Status == CellStatus.Forbidden.ToString() ||
+                        Cells[x, y].Status == CellStatus.None.ToString())
                     {
-                        Cells[x, y].CellStatus = CellStatus.ShootWithoutHit.ToString();
+                        Cells[x, y].Status = CellStatus.ShootWithoutHit.ToString();
                     }
                 }
             }
@@ -68,7 +68,7 @@ namespace Application.Managers
                         Id = Guid.NewGuid(),
                         X = i,
                         Y = j,
-                        CellStatus = CellStatus.None.ToString()
+                        Status = CellStatus.None.ToString()
                     };
                 }
             }
@@ -85,7 +85,7 @@ namespace Application.Managers
                     {
                         if(IsCellExistAndNotShip(x, y))
                         {
-                            Cells[x, y].CellStatus = CellStatus.Forbidden.ToString();
+                            Cells[x, y].Status = CellStatus.Forbidden.ToString();
                         }
                     }
                 }
@@ -95,8 +95,8 @@ namespace Application.Managers
         {
             if (x >= 0 && x < GameRules.FIELD_SIZE
                 && y >= 0 && y < GameRules.FIELD_SIZE
-                && Cells[x, y].CellStatus != CellStatus.Busy.ToString()
-                && Cells[x, y].CellStatus != CellStatus.Destroyed.ToString())
+                && Cells[x, y].Status != CellStatus.Busy.ToString()
+                && Cells[x, y].Status != CellStatus.Destroyed.ToString())
                 return true;
             return false;
         }

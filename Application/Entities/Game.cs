@@ -1,5 +1,3 @@
-using Domain;
-
 namespace Application.Entities
 {
     public class Game
@@ -8,7 +6,7 @@ namespace Application.Entities
         public string? FirstPlayerName { get; set; }
         public string? SecondPlayerName { get; set; }
         public string? NameOfWinner { get; set; }
-        public string GameStatus { get; set; }
+        public string Status { get; set; }
         public int MoveCount { get; set; }
         public string? ResultInfo { get; set; }
         public Guid FirstPlayerFieldId { get; set; }

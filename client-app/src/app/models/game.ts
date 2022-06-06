@@ -5,7 +5,7 @@ export interface Game {
     firstPlayerName?: string;
     secondPlayerName?: string;
     nameOfWinner?: string;
-    gameStatus: string;
+    status: string;
     moveCount: number;
     resultInfo?: string;
 }

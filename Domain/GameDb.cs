@@ -6,7 +6,7 @@ namespace Domain
         public string? FirstPlayerName { get; set; }
         public string? SecondPlayerName { get; set; }
         public string? NameOfWinner { get; set; }
-        public string? GameStatus { get; set; }
+        public string? Status { get; set; }
         public int MoveCount { get; set; } = default(int);
         public string? ResultInfo { get; set; }
         public virtual FieldDb? FirstPlayerField { get; set; }

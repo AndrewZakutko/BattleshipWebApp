@@ -30,7 +30,7 @@ namespace Application.Handlers.FieldHandlers
                 var field = await _context.Fields.FindAsync(request.FieldId);
 
                 var listShips = await _context.CellShips.Where(x => x.Field.Id == request.FieldId 
-                    && x.Cell.CellStatus != CellStatus.Destroyed.ToString()).Select(x => x.Ship).ToListAsync();
+                    && x.Cell.Status != CellStatus.Destroyed.ToString()).Select(x => x.Ship).ToListAsync();
 
                 var list = new List<ShipDb>();
 
@@ -48,10 +48,10 @@ namespace Application.Handlers.FieldHandlers
 
                 info = $"Count of ships on field: {list.Count}";
 
-                var shipsRankOne = list.Where(x => x.ShipRank == ShipRank.One.ToString()).ToList();
-                var shipsRankTwo = list.Where(x => x.ShipRank == ShipRank.Two.ToString()).ToList();
-                var shipsRankThree = list.Where(x => x.ShipRank == ShipRank.Three.ToString()).ToList();
-                var shipsRankFour = list.Where(x => x.ShipRank == ShipRank.Four.ToString()).ToList();
+                var shipsRankOne = list.Where(x => x.Rank == ShipRank.One.ToString()).ToList();
+                var shipsRankTwo = list.Where(x => x.Rank == ShipRank.Two.ToString()).ToList();
+                var shipsRankThree = list.Where(x => x.Rank == ShipRank.Three.ToString()).ToList();
+                var shipsRankFour = list.Where(x => x.Rank == ShipRank.Four.ToString()).ToList();
 
                 if(shipsRankOne.Count > 0)
                 {

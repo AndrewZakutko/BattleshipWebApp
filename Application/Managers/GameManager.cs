@@ -19,7 +19,7 @@ namespace Application.Managers
 
             var n = default(int);
 
-            switch (ship.ShipRank)
+            switch (ship.Rank)
             {
                 case "One":
                     n = 1;
@@ -40,18 +40,18 @@ namespace Application.Managers
 
             for(int i = 0; i < n; i++)
             {
-                if(ship.ShipDirection == "Horizontal")
+                if(ship.Direction == "Horizontal")
                 {
-                    if(field[x, y + i].CellStatus == CellStatus.Busy.ToString() || 
-                        field[x, y + i].CellStatus == CellStatus.Forbidden.ToString())
+                    if(field[x, y + i].Status == CellStatus.Busy.ToString() || 
+                        field[x, y + i].Status == CellStatus.Forbidden.ToString())
                     {
                         return false;
                     }
                 }
                 else 
                 {
-                    if(field[x - i, y].CellStatus == CellStatus.Busy.ToString() || 
-                        field[x - i, y].CellStatus == CellStatus.Forbidden.ToString())
+                    if(field[x - i, y].Status == CellStatus.Busy.ToString() || 
+                        field[x - i, y].Status == CellStatus.Forbidden.ToString())
                     {
                         return false;
                     }
@@ -63,7 +63,7 @@ namespace Application.Managers
 
         public bool IsNumberOfShipsExceed(List<Ship> ships)
         {
-            var shipRank = ships[0].ShipRank;
+            var shipRank = ships[0].Rank;
             switch(shipRank)
             {
                 case "One":

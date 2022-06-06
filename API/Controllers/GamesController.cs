@@ -1,4 +1,5 @@
 using Application.Entities;
+using Application.EntityHalpers;
 using Application.Handlers.GameHandlers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;

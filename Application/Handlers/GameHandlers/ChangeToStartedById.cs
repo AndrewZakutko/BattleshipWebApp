@@ -27,7 +27,7 @@ namespace Application.Handlers.GameHandlers
                 var game = await _context.Games.Where(x => x.Id == request.GameId).FirstOrDefaultAsync();
                 if (game == null) return null;
 
-                game.GameStatus = GameStatus.Started.ToString();
+                game.Status = GameStatus.Started.ToString();
                 var result = await _context.SaveChangesAsync() > 0;
 
                 if (result) return Result<Unit>.Success(Unit.Value);

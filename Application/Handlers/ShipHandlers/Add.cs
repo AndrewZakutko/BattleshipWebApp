@@ -1,5 +1,6 @@
 using Application.Core;
 using Application.Entities;
+using Application.EntityHalpers;
 using Application.Enums;
 using Application.Managers;
 using AutoMapper;
@@ -35,8 +36,8 @@ namespace Application.Handlers.ShipHandlers
                 {
                     StartPositionX = request.AddShip.StartPositionX,
                     StartPositionY = request.AddShip.StartPositionY,
-                    ShipDirection = request.AddShip.Direction,
-                    ShipRank = request.AddShip.Rank
+                    Direction = request.AddShip.Direction,
+                    Rank = request.AddShip.Rank
                 };
 
                 var checkShip = new Ship();
@@ -74,8 +75,8 @@ namespace Application.Handlers.ShipHandlers
                             Id = x.Id,
                             StartPositionX = x.StartPositionX,
                             StartPositionY = x.StartPositionY,
-                            ShipDirection = x.ShipDirection,
-                            ShipRank = x.ShipRank
+                            Direction = x.Direction,
+                            Rank = x.Rank
                         }).ToList();
 
                         if (_gameManager.IsNumberOfShipsMax(listShips))
@@ -84,7 +85,7 @@ namespace Application.Handlers.ShipHandlers
                         }
                     }
 
-                    var listShipsByRankDb = listCellShips.Select(x => x.Ship).Where(x => x.ShipRank == ship.ShipRank).ToList();
+                    var listShipsByRankDb = listCellShips.Select(x => x.Ship).Where(x => x.Rank == ship.Rank).ToList();
 
                     var list = new List<ShipDb>();
 
@@ -107,8 +108,8 @@ namespace Application.Handlers.ShipHandlers
                             Id = x.Id,
                             StartPositionX = x.StartPositionX,
                             StartPositionY = x.StartPositionY,
-                            ShipDirection = x.ShipDirection,
-                            ShipRank = x.ShipRank
+                            Direction = x.Direction,
+                            Rank = x.Rank
                         }).ToList();
 
                         if (_gameManager.IsNumberOfShipsExceed(listShips))
@@ -159,7 +160,7 @@ namespace Application.Handlers.ShipHandlers
                             Id = new Guid(),
                             X = request.AddShip.StartPositionX,
                             Y = request.AddShip.StartPositionY + i,
-                            CellStatus = CellStatus.Busy.ToString(),
+                            Status = CellStatus.Busy.ToString(),
                         };
                         await _context.Cells.AddAsync(newShipCell);
                         await _context.CellShips.AddAsync(new CellShipDb()
@@ -179,7 +180,7 @@ namespace Application.Handlers.ShipHandlers
                             Id = new Guid(),
                             X = request.AddShip.StartPositionX - i,
                             Y = request.AddShip.StartPositionY,
-                            CellStatus = CellStatus.Busy.ToString(),
+                            Status = CellStatus.Busy.ToString(),
                         };
                         await _context.Cells.AddAsync(newShipCell);
                         await _context.CellShips.AddAsync(new CellShipDb()

@@ -1,5 +1,5 @@
 using Application.Core;
-using Application.Entities;
+using Application.EntityHalpers;
 using Application.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -33,7 +33,7 @@ namespace Application.Handlers.GameHandlers
                 game.NameOfWinner = request.FinishGame.NameOfWinner;
                 game.MoveCount = winner.MoveCount;
                 game.ResultInfo = request.FinishGame.ResultInfo;
-                game.GameStatus = GameStatus.Finished.ToString();
+                game.Status = GameStatus.Finished.ToString();
 
                 var firstPlayer = await _context.Players.Where(p => p.Name == game.FirstPlayerName).FirstOrDefaultAsync();
                 var secondPlayer = await _context.Players.Where(p => p.Name == game.SecondPlayerName).FirstOrDefaultAsync();

@@ -1,5 +1,6 @@
 ﻿using Application.Core;
 using Application.Entities;
+using Application.EntityHalpers;
 using Application.Enums;
 using Application.Managers;
 using Domain;
@@ -61,14 +62,14 @@ namespace Application.Handlers.ShootHandlers
                             Id = c.Id,
                             X = c.X,
                             Y = c.Y,
-                            CellStatus = c.CellStatus
+                            Status = c.Status
                         }).ToList();
 
                         if (_shootManager.IsHit(cells, request.Shoot.X, request.Shoot.Y))
                         {
                             var cell = cellsDb.Where(c => c.X == request.Shoot.X &&
                                 c.Y == request.Shoot.Y).FirstOrDefault();
-                            cell.CellStatus = CellStatus.Destroyed.ToString();
+                            cell.Status = CellStatus.Destroyed.ToString();
                             firstPlayer.IsGoing = true;
                             secondPlayer.IsGoing = false;
                             firstPlayer.MoveCount += 1;

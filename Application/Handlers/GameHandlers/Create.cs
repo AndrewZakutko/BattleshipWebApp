@@ -31,9 +31,9 @@ namespace Application.Handlers.GameHandlers
                 if (player == null) return null;
 
                 var isGameAvailable = await _context.Games.Where(g => g.FirstPlayerName == request.Player.Name
-                    && g.GameStatus == GameStatus.Started.ToString()
+                    && g.Status == GameStatus.Started.ToString()
                     || g.SecondPlayerName == request.Player.Name
-                    && g.GameStatus == GameStatus.Started.ToString()).AnyAsync();
+                    && g.Status == GameStatus.Started.ToString()).AnyAsync();
                 if (isGameAvailable == true) return null;
 
                 var field = new FieldDb();
@@ -44,7 +44,7 @@ namespace Application.Handlers.GameHandlers
                 {
                     FirstPlayerField = field,
                     FirstPlayerName = request.Player.Name,
-                    GameStatus = GameStatus.NotReady.ToString(),
+                    Status = GameStatus.NotReady.ToString(),
                     MoveCount = default(int),
                 };
 

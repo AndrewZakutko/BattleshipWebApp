@@ -52,7 +52,7 @@ namespace Application.Handlers.CellHandlers
                     Id = x.Id,
                     X = x.X,
                     Y = x.Y,
-                    CellStatus = x.CellStatus
+                    Status = x.Status
                 }).ToList();
 
                 var listShootsDb = await _context.Shoots.Where(x => x.FieldId == request.FieldId).ToListAsync();

@@ -1,5 +1,6 @@
 using Application.Core;
 using Application.Entities;
+using Application.EntityHalpers;
 using Application.Enums;
 using AutoMapper;
 using Domain;

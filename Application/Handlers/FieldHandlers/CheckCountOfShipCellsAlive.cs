@@ -31,7 +31,7 @@ namespace Application.Handlers.FieldHandlers
             public async Task<Result<int>> Handle(Command request, CancellationToken cancellationToken)
             {
                 var listShips = await _context.CellShips.Where(x => x.Field.Id == request.Id 
-                    && x.Cell.CellStatus != CellStatus.Destroyed.ToString()).Select(x => x.Ship).ToListAsync();
+                    && x.Cell.Status != CellStatus.Destroyed.ToString()).Select(x => x.Ship).ToListAsync();
 
                 var list = new List<ShipDb>();
 

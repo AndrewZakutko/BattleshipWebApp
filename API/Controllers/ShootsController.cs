@@ -1,4 +1,4 @@
-﻿using Application.Entities;
+﻿using Application.EntityHalpers;
 using Application.Handlers.ShootHandlers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

@@ -29,9 +29,9 @@ namespace Application.Handlers.GameHandlers
             public async Task<Result<Game>> Handle(Command request, CancellationToken cancellationToken)
             {
                 var gameDb = await _context.Games.Where(x => x.FirstPlayerName == request.Name
-                    && x.GameStatus != GameStatus.Finished.ToString()
+                    && x.Status != GameStatus.Finished.ToString()
                     || x.SecondPlayerName == request.Name
-                    && x.GameStatus != GameStatus.Finished.ToString()).FirstOrDefaultAsync();
+                    && x.Status != GameStatus.Finished.ToString()).FirstOrDefaultAsync();
 
                 var game = new Game();
                 

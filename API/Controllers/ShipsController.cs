@@ -1,4 +1,4 @@
-using Application.Entities;
+using Application.EntityHalpers;
 using Application.Handlers.ShipHandlers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
